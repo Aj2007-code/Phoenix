@@ -16,7 +16,7 @@
   <title>Gallery | Team Phoenix</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;500;700&family=Montserrat:wght@400;500;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Tailwind (for utility classes) -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -149,6 +149,128 @@ img {
       background: #f97316;
       border-radius: 8px;
     }
+  
+/* =========================================================
+   PHOENIX DESIGN SYSTEM — shared across all pages
+   Chassis-plate card language: chamfered (cut) corners +
+   embedded corner rivets + a slow ember seam on the edge,
+   replacing plain rounded-rectangle cards site-wide.
+   ========================================================= */
+:root{
+  --void:#050505;
+  --panel:#121214;
+  --panel-2:#0a0a0b;
+  --ember1:#f97316;
+  --ember2:#ff5a1f;
+  --ember-glow:rgba(249,115,22,.45);
+  --steel:#d9dade;
+  --dim:#9a9aa1;
+  --line:rgba(255,255,255,.08);
+}
+
+/* Two-typeface system: Orbitron for display, Rajdhani for body —
+   both geometric/technical, but clearly distinct in texture. */
+body, p, a, li, input, select, textarea, button, label, span {
+  font-family: 'Rajdhani', 'Poppins', sans-serif;
+}
+h1, h2, h3, h4 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: .3px;
+}
+body { font-size: 1.05rem; font-weight: 500; }
+p { line-height: 1.7; }
+
+/* ---- Chassis card: the shared "cut-corner plate" component ---- */
+.chassis-card{
+  position: relative;
+  background:
+    radial-gradient(circle 3px at calc(100% - 18px) 18px, var(--ember1) 99%, transparent 100%),
+    radial-gradient(circle 3px at 18px calc(100% - 18px), var(--ember1) 99%, transparent 100%),
+    linear-gradient(155deg, var(--panel) 0%, var(--panel-2) 100%);
+  border: 1px solid var(--line);
+  clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+  padding: 30px 26px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.5);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.chassis-card::before{
+  content:"";
+  position:absolute; inset:0;
+  clip-path:inherit;
+  padding:1.5px;
+  background:linear-gradient(120deg, var(--ember1), transparent 40%, transparent 60%, var(--ember1));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+  opacity:.45;
+  pointer-events:none;
+  transition:opacity .35s ease;
+}
+.chassis-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(249,115,22,.22);
+}
+.chassis-card:hover::before{ opacity: 1; }
+.chassis-card h3, .chassis-card h4{ color:#fff; margin-bottom:8px; }
+.chassis-card p{ color: var(--dim); }
+.chassis-card .chassis-icon{
+  width:52px; height:52px; object-fit:contain; margin-bottom:14px;
+}
+.chassis-card a.chassis-link{
+  display:inline-block;
+  margin-top:10px;
+  color: var(--ember1);
+  font-weight:700;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:border-color .25s ease, color .25s ease;
+}
+.chassis-card a.chassis-link:hover{
+  color:#ffb457;
+  border-color:#ffb457;
+}
+
+/* Same chamfer language applied to existing card systems, via their
+   existing class names — no markup changes needed for these. */
+.flip-card-front, .flip-card-back{
+  border-radius: 0 !important;
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+}
+.team-front, .team-back{
+  border-radius: 0 !important;
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+}
+
+/* ---- Gallery: chamfered frames instead of plain rounded thumbs ---- */
+.gallery-shot{
+  border-radius: 0 !important;
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px) !important;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 20px rgba(0,0,0,.5);
+  transition: transform .35s ease, box-shadow .35s ease, filter .35s ease !important;
+  filter: saturate(.9) brightness(.92);
+}
+.gallery-shot:hover{
+  transform: scale(1.035) !important;
+  filter: saturate(1.05) brightness(1);
+  box-shadow: 0 14px 34px rgba(249,115,22,.3);
+}
+
+/* ---- Contact / info panels reusing the chassis language ---- */
+.contact-info, .contact-form{
+  background:
+    radial-gradient(circle 3px at calc(100% - 18px) 18px, var(--ember1) 99%, transparent 100%),
+    radial-gradient(circle 3px at 18px calc(100% - 18px), var(--ember1) 99%, transparent 100%),
+    linear-gradient(155deg, var(--panel) 0%, var(--panel-2) 100%) !important;
+  border: 1px solid var(--line);
+  border-radius: 0 !important;
+  clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+}
+.contact-header-box{
+  border-radius: 0 !important;
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  border-left: 2px solid var(--ember1);
+}
+
   </style>
 </head>
 <body>
@@ -220,62 +342,62 @@ img {
     <!-- All Images (grid layout, default visible) -->
     <div class="gallery-section grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" data-category="all">
       <!-- Robocon 2025 -->
-      <img src="gallery/101.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/102.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/103.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/104.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/105.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/106.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/107.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/108.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/109.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/110.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/111.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/112.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/113.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/101.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/102.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/103.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/104.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/105.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/106.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/107.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/108.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/109.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/110.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/111.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/112.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/113.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
       <!-- add other 2025 images -->
 
       <!-- Robocon 2024 -->
-     <img src="gallery/115.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/116.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/117.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/118.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/119.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/120.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/121.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/122.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/123.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/124.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-         <img src="gallery/125.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+     <img src="gallery/115.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/116.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/117.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/118.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/119.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/120.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/121.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/122.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/123.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/124.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+         <img src="gallery/125.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
 
       <!-- IROCU -->
-   <!--   <img src="gallery/i1.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/i2.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+   <!--   <img src="gallery/i1.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/i2.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
     -->
-          <img src="gallery/126.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/127.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-         <img src="gallery/128.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/129.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-         <img src="gallery/130.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+          <img src="gallery/126.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/127.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+         <img src="gallery/128.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/129.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+         <img src="gallery/130.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
      
 </div>
     <!-- Robocon 2025 -->
     <div class="gallery-section hidden" data-category="robocon2025">
       <h2 class="text-3xl orbitron text-center mb-4 text-orange-500">Robocon 2025</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-       <img src="gallery/101.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/102.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/103.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/104.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/105.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/106.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/107.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/108.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/109.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/110.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/111.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/112.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      <img src="gallery/113.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+       <img src="gallery/101.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/102.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/103.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/104.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/105.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/106.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/107.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/108.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/109.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/110.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/111.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/112.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+      <img src="gallery/113.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
         <!-- add other 2025 images -->
       </div>
     </div>
@@ -284,18 +406,17 @@ img {
     <div class="gallery-section hidden" data-category="robocon2024">
       <h2 class="text-3xl orbitron text-center mb-4 text-orange-500">Robocon 2024</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <img src="gallery/115.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/116.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/117.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/118.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/119.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/120.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/121.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/122.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/123.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/124.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-         <img src="gallery/125.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-      </div>
+        <img src="gallery/115.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/116.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/117.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/118.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/119.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/120.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/121.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/122.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/123.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/124.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+         <img src="gallery/125.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
       </div>
     </div>
 
@@ -303,11 +424,11 @@ img {
     <div class="gallery-section hidden" data-category="irocu">
       <h2 class="text-3xl orbitron text-center mb-4 text-orange-500">IROC-U</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <img src="gallery/126.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/127.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-         <img src="gallery/128.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-        <img src="gallery/129.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
-         <img src="gallery/130.jpg" class="rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/126.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/127.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+         <img src="gallery/128.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+        <img src="gallery/129.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
+         <img src="gallery/130.jpg" class="gallery-shot rounded-xl shadow-lg w-full h-[220px] object-cover transform transition hover:scale-105" />
      
       </div>
     </div>
@@ -339,8 +460,6 @@ img {
     });
   });
 </script>
-
-</section>
 
 <!-- FOOTER -->
 <footer class="bg-black text-white px-6 pt-10 pb-6 relative border-t border-orange-500 shadow-inner z-50">
