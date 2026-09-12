@@ -110,7 +110,7 @@
 
     /* Lottie and map */
     .lottie-icons { display:flex; gap:12px; margin-top:10px; }
-    .map { width:100%; height:400px; border:2px solid #222; border-radius:8px; margin-top:12px; }
+    .map { width:100%; height:180px; border:2px solid #222; border-radius:8px; margin-top:12px; }
 
     /* Status message */
     #formStatus[hidden] { display:none; }
@@ -120,7 +120,6 @@
       .columns { grid-template-columns: 1fr; }
       #home { height:60vh; }
       .contact-header-box { padding:18px; }
-      .map { height:280px; }
     }
   </style>
 </head>
@@ -198,7 +197,7 @@
 
        
 
-        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3421.9098386906803!2d84.850329!3d25.537156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDMyJzEzLjgiTiA4NMKwNTEnMDEuMiJF!5e1!3m2!1sen!2sin!4v1754081578974!5m2!1sen!2sin" width="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Team Phoenix map"></iframe>
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3421.9098386906803!2d84.850329!3d25.537156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDMyJzEzLjgiTiA4NMKwNTEnMDEuMiJF!5e1!3m2!1sen!2sin!4v1754081578974!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Team Phoenix map"></iframe>
       </div>
 
       <!-- Contact Form -->
@@ -252,7 +251,6 @@
       <div class="space-y-2 text-sm text-gray-300">
         <p class="flex items-center justify-center md:justify-start gap-2">
           <i class="fas fa-envelope text-yellow-400 text-lg"></i>
-          <a href="mailto:robocon@iitp.ac.in" class="hover:text-orange-400">robocon@iitp.ac.in</a>
         </p>
         <p class="flex items-center justify-center md:justify-start gap-2">
           <i class="fas fa-map-marker-alt text-green-400 text-lg"></i>
@@ -266,7 +264,7 @@
         <a href="https://linkedin.com/company/teamphoenixiitp" target="_blank" title="LinkedIn" class="hover:scale-110 transition-transform">
           <img src="https://img.icons8.com/fluency/30/linkedin.png" alt="LinkedIn" />
         </a>
-        <a href="mailto:robocon@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
+        <a href="mailto:teamphoenix@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
           <img src="https://img.icons8.com/fluency/30/new-post.png" alt="Email" />
         </a>
       </div>
@@ -335,11 +333,16 @@ let db;
 try {
   const app = initializeApp(firebaseConfig);
   db = getFirestore(app);
+  const status = document.getElementById("formStatus");
+  if (status) {
+    status.hidden = false;
+    status.textContent = "✅ You can send a message.";
+  }
 } catch (initErr) {
   const status = document.getElementById("formStatus");
   if (status) {
     status.hidden = false;
-    status.textContent = "❌ Setup failed: " + initErr.message;
+    status.textContent = "❌  failed: " + initErr.message;
   }
   console.error("Firebase init error:", initErr);
 }
@@ -368,10 +371,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const subject = document.getElementById("subject")?.value || "";
     const message = document.getElementById("message")?.value?.trim() || "";
 
+    console.log("Captured contact:", emailOrPhone); // 🔍 Debugging
+
     try {
       await addDoc(collection(db, "messages"), {
         name,
-        contact: emailOrPhone,
+        contact: emailOrPhone, // ✅ renamed field
         subject,
         message,
         createdAt: serverTimestamp()
@@ -382,7 +387,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       form.reset();
     } catch (err) {
-      console.error("Firestore error:", err);
+      console.error("🔥 Firestore error:", err);
       if (status) {
         status.hidden = false;
         status.textContent = "❌ Error: " + err.message;
@@ -397,14 +402,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCMJ34W220"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-PCMJ34W220');
-</script>
+
 
 </body>
 </html>
