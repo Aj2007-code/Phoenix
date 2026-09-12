@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <!-- Google tag (gtag.js) -->
@@ -15,62 +15,207 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Robots - Team Phoenix</title>
+  <link rel="icon" type="image/png" href="img/11111.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@400;500;600;700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
   <style>
+    html, body { max-width: 100%; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; }
+
     body {
-      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      font-family: 'Rajdhani', 'Poppins', sans-serif;
+      background: linear-gradient(120deg,#000 0%,#0b0e17 50%,#000 100%);
+      color: white;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    h1, h2, h3 { font-family: 'Orbitron', sans-serif; }
+
+    :root{
+      --void:#050505; --panel:#121214; --panel-2:#0a0a0b;
+      --ember1:#f97316; --ember2:#ff5a1f; --ember-glow:rgba(249,115,22,.45);
+      --steel:#d9dade; --dim:#b9bac0; --line:rgba(255,255,255,.08);
+    }
+
+    /* Navbar (shared across the site) */
+    nav {
+      background: black;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    nav .logo { display:flex; align-items:center; font-weight:700; color:#fff; }
+    nav .logo img { height:35px; width:35px; object-fit:contain; margin-right:8px; }
+    nav .iit-center-text { flex:1; text-align:center; font-family:'Poppins'; font-weight:700; }
+    nav ul { display:flex; gap:22px; list-style:none; margin:0; padding:0; }
+    nav a { color:#fff; text-decoration:none; font-weight:600; position:relative; font-family:'Poppins', sans-serif; }
+    nav a:hover::after, nav a.active::after { content:""; position:absolute; left:0; bottom:-6px; height:2px; width:100%; background:orange; }
+
+    /* Hero */
+    .black-orange-corners {
+      background:
+        radial-gradient(circle at top left, rgba(255,120,0,0.2), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255,94,0,0.18), transparent 30%),
+        #000;
+      position:absolute; inset:0; z-index:-1; background-repeat:no-repeat; background-size:cover;
+    }
+    #home { position:relative; height:46vh; display:flex; align-items:center; justify-content:center; padding-top:64px; overflow:hidden; }
+
+    .gradient-bg {
+      position:absolute; inset:0; width:100%; height:100%; left:-25%; top:-25%;
+      background: radial-gradient(circle at center,#ff4500 0%, #0a0a0a 70%);
+      opacity:0.12; transform:rotate(25deg); z-index:0;
+    }
+
+    .robot-section { position: relative; z-index: 1; }
+
+    /* Chassis card (same language as the rest of the site) */
+    .chassis-card{
+      position: relative;
+      background:
+        radial-gradient(circle 3px at calc(100% - 18px) 18px, var(--ember1) 99%, transparent 100%),
+        radial-gradient(circle 3px at 18px calc(100% - 18px), var(--ember1) 99%, transparent 100%),
+        linear-gradient(155deg, var(--panel) 0%, var(--panel-2) 100%);
+      border: 1px solid var(--line);
+      clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+      box-shadow: 0 10px 26px rgba(0,0,0,.5);
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+    .chassis-card:hover{ transform: translateY(-4px); box-shadow: 0 18px 40px rgba(249,115,22,.2); }
+    .chassis-card p, .chassis-card li { color: var(--dim); }
+    .chassis-card b { color: #ffcf9e; }
+
+    .robot-photo-frame{
+      position: relative;
+      clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+      border: 1px solid var(--line);
+      overflow: hidden;
+      background: #0a0a0b;
+    }
+    .robot-photo-frame img{ display:block; width:100%; }
+    .robot-photo-frame .img-fallback-icon{
+      display:none; position:absolute; inset:0; align-items:center; justify-content:center;
+      font-size: 2.6rem; color: var(--ember1); opacity:.4;
+      background: linear-gradient(135deg,#1a1a1a,#0a0a0a);
+    }
+
+    .ember-btn{
+      display:inline-block;
+      background: linear-gradient(135deg, var(--ember1), var(--ember2));
+      color:#fff; font-weight:700;
+      padding: 12px 26px;
+      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+      transition: transform .25s ease, box-shadow .25s ease;
+      text-decoration:none;
+    }
+    .ember-btn:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px rgba(249,115,22,.4); }
+    .ember-btn.outline{
+      background: transparent;
+      border: 2px solid var(--ember1);
+      color: var(--ember1);
+    }
+
+    .year-tag{
+      display:inline-block;
+      font-family:'Orbitron', sans-serif;
+      font-size: .8rem;
+      letter-spacing: 1px;
+      color: var(--ember1);
+      border-left: 3px solid var(--ember1);
+      padding-left: 10px;
     }
   </style>
 </head>
 
-<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+<body class="text-white transition-colors duration-300">
 
-  <!-- Header -->
-  <header class="text-center py-10">
-    <h1 class="text-4xl md:text-5xl font-bold text-orange-500">Our Robots</h1>
-    <p class="text-lg mt-2 text-gray-600 dark:text-gray-300">Explore our creations through the years</p>
-  </header>
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black flex items-center justify-between px-4 py-2">
+    <div class="flex items-center gap-2">
+      <img src="image1-removebg-preview.png" alt="logo" class="h-9 w-9 object-contain">
+      <span class="font-bold text-white">Team Phoenix<span class="text-orange-500">.</span></span>
+    </div>
+
+    <div class="hidden md:block font-semibold text-white">IIT Patna</div>
+
+    <button id="burger" class="flex flex-col justify-between w-6 h-5 md:hidden">
+      <span class="block w-full h-[3px] bg-white"></span>
+      <span class="block w-full h-[3px] bg-white"></span>
+      <span class="block w-full h-[3px] bg-white"></span>
+    </button>
+
+    <ul id="menu" class="fixed top-0 right-[-100%] h-full w-[80%] bg-black flex flex-col items-start pt-6 gap-6 pl-6 transition-all duration-300 z-50 md:static md:flex-row md:gap-6 md:w-auto md:h-auto md:pt-0 md:pl-0 md:right-0">
+      <button id="close-menu" class="text-white text-2xl absolute top-4 right-4 hover:text-orange-400 md:hidden">&times;</button>
+      <li><a href="index.html" class="text-white font-semibold hover:text-orange-400">Home</a></li>
+      <li><a href="team.html" class="text-white font-semibold hover:text-orange-400">Team</a></li>
+      <li><a href="gallery.html" class="text-white font-semibold hover:text-orange-400">Gallery</a></li>
+      <li><a href="resource.html" class="text-white font-semibold hover:text-orange-400">Resources</a></li>
+      <li><a href="contact.html" class="text-white font-semibold hover:text-orange-400">Contact</a></li>
+      <li><a href="Conspectus_Phoenix.pdf" class="text-white font-semibold hover:text-orange-400">Collaborate</a></li>
+    </ul>
+  </nav>
+
+  <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+  <!-- HERO -->
+  <section id="home">
+    <div class="black-orange-corners"></div>
+    <div id="particles-js" class="absolute inset-0 z-0"></div>
+    <div style="z-index:2; width:100%; max-width:900px; text-align:center; padding:0 20px;">
+      <h1 class="text-4xl md:text-5xl font-bold text-orange-500">Our Robots</h1>
+      <p class="text-lg mt-2" style="color:#c7c7c7;">Explore our creations through the years</p>
+    </div>
+  </section>
 
   <!-- 2025 Robot -->
-  <section class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 items-center gap-8" data-aos="fade-up">
+  <section class="robot-section max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 items-center gap-10" data-aos="fade-up">
     <img src="img/logo.png" class="w-full max-w-md mx-auto md:mx-0 hover:scale-105 transition-transform duration-300" />
 
     <div>
-      <h2 class="text-sm text-red-600 font-semibold uppercase">Robocon 2025</h2>
-      <h3 class="text-3xl font-bold mb-4">Robot Basketball - Team Effort, Ultimate Success</h3>
-      <p class="text-gray-700 dark:text-gray-300 mb-6">
+      <span class="year-tag">Robocon 2025</span>
+      <h3 class="text-3xl font-bold mb-4 mt-3">Robot Basketball - Team Effort, Ultimate Success</h3>
+      <p class="mb-6" style="color:var(--dim);">
         ABU Robocon 2025,” held in Ulaanbaatar, Mongolia, introduces the Robot Basketball game under the motto “Team
         Effort, Ultimate Success”. Teams of two robots per side (red vs. blue) compete in fast-paced matches where
         precision, teamwork, and strategy determine the victor.
       </p>
-      <a href="https://www.youtube.com/watch?v=FTopsDAp2-o" target="_blank"
-        class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition">▶️
-        Watch Demo</a>
-      <button onclick="toggleRobotDemo('robot-demo-2025')"
-        class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition">
-        View Our Bots
-      </button>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://www.youtube.com/watch?v=FTopsDAp2-o" target="_blank" class="ember-btn">▶️ Watch Demo</a>
+        <button onclick="toggleRobotDemo('robot-demo-2025')" class="ember-btn outline">View Our Bots</button>
+      </div>
+
       <!-- 🔍 Robot Demo Section (Initially Hidden) -->
-      <div id="robot-demo-2025" class="hidden py-16 px-6 bg-gray-100 dark:bg-gray-800 text-center">
+      <div id="robot-demo-2025" class="hidden py-16 px-2 md:px-6 text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-4">2025 Robot Demo</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
+        <p class="text-lg mb-10 max-w-3xl mx-auto" style="color:var(--dim);">
           Dive into our detailed breakdown of the bots we designed for ABU Robocon 2025 – their roles, challenges,
           design goals, and how they tackled the "Robot Basketball" problem statement.
         </p>
 
         <!-- 📽️ Video -->
         <div class="mb-12 max-w-4xl mx-auto shadow-lg">
-          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-            frameborder="0" allowfullscreen></iframe>
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/FTopsDAp2-o"
+            frameborder="0" allowfullscreen title="2025 Robot Demo Video"></iframe>
         </div>
 
         <!-- 🤖 Robot 1 -->
-        <div class="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-10 text-left max-w-5xl mx-auto">
-          <h3 class="text-xl font-semibold text-red-600 mb-2">Robot 1: Shooter Bot</h3>
-          <img src="0e2f16d8-0565-401a-982a-7ce56f400efa.png" class="w-full max-w-md mb-4 rounded"
-            alt="Shooter Robot" />
+        <div class="chassis-card p-6 mb-10 text-left max-w-5xl mx-auto">
+          <h3 class="text-xl font-semibold text-orange-500 mb-2">Robot 1: Shooter Bot</h3>
+          <div class="robot-photo-frame w-full max-w-md mb-4">
+            <img src="img/robot-2025-r1.png" alt="Shooter Robot"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-robot"></i></div>
+          </div>
           <p>
             In 2025, the game switched to basketball-and so did our robot design. R1 for this year was built
             to score. Its shooting system used a dual flywheel setup that could control both the angle and speed
@@ -91,9 +236,13 @@
         </div>
 
         <!-- 🛡️ Robot 2 -->
-        <div class="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-10 text-left max-w-5xl mx-auto">
-          <h3 class="text-xl font-semibold text-red-600 mb-2">Robot 2: Assist & Defense Bot</h3>
-          <img src="your_second_robot_image.png" class="w-full max-w-md mb-4 rounded" alt="Assist Robot" />
+        <div class="chassis-card p-6 mb-10 text-left max-w-5xl mx-auto">
+          <h3 class="text-xl font-semibold text-orange-500 mb-2">Robot 2: Assist & Defense Bot</h3>
+          <div class="robot-photo-frame w-full max-w-md mb-4">
+            <img src="img/robot-2025-r2.png" alt="Assist Robot"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-robot"></i></div>
+          </div>
           <p>
             R2 in 2025 played a support role to R1. It stayed on the defensive end of the court, focusing on
             blocking opponent shots and recovering missed balls. It had the same drive and body structure as
@@ -106,36 +255,35 @@
             <b> • Software:</b> I2C communication, PID motor control using Simulink, EasyEDA , KiCAD , ROS2<br>
             <b>• Mechanical Design:</b> Shared chassis with R1, lightweight aluminum frame<br>
             <b>• Electronics:</b> MD10C Motor Driver, custom PCB for power and signal routing<br>
+          </p>
         </div>
-
 
       </div>
 
     </div>
   </section>
- <!-- 2024 Robot -->
-  <section class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 items-center gap-8" data-aos="fade-up">
+
+  <!-- 2024 Robot -->
+  <section class="robot-section max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 items-center gap-10" data-aos="fade-up">
     <img src="img/LOGO_ROBOCON2024.png" class="w-full max-w-md mx-auto md:mx-0 hover:scale-105 transition-transform duration-300" />
 
     <div>
-      <h2 class="text-sm text-red-600 font-semibold uppercase">Robocon 2024</h2>
-      <h3 class="text-3xl font-bold mb-4">Robot Farming - Cultivating Innovation</h3>
-      <p class="text-gray-700 dark:text-gray-300 mb-6">
+      <span class="year-tag">Robocon 2024</span>
+      <h3 class="text-3xl font-bold mb-4 mt-3">Robot Farming - Cultivating Innovation</h3>
+      <p class="mb-6" style="color:var(--dim);">
         ABU Robocon 2024, hosted in Pune, India, embraced the theme "Harvest Day", inspired by Vietnamese folklore. The challenge required teams to design two coordinated robots – an automatic robot and a manual robot – that worked together to plant and harvest symbolic crops on a dynamic game field.
 
 With elements of real-time coordination, precision placement, and agricultural simulation, the contest showcased creative problem-solving and teamwork in the domain of robotic agriculture.
       </p>
-      <a href="https://www.youtube.com/watch?v=FTopsDAp2-o" target="_blank"
-        class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition">▶️
-        Watch Demo</a>
-      <button onclick="toggleRobotDemo('robot-demo-2024')"
-        class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition">
-        View Our Bots
-      </button>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://www.youtube.com/watch?v=FTopsDAp2-o" target="_blank" class="ember-btn">▶️ Watch Demo</a>
+        <button onclick="toggleRobotDemo('robot-demo-2024')" class="ember-btn outline">View Our Bots</button>
+      </div>
+
       <!-- 🔍 Robot Demo Section (Initially Hidden) -->
-      <div id="robot-demo-2024" class="hidden py-16 px-6 bg-gray-100 dark:bg-gray-800 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-4">2025 Robot Demo</h2>
-        <p class="text-lg text-gray-700 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
+      <div id="robot-demo-2024" class="hidden py-16 px-2 md:px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-4">2024 Robot Demo</h2>
+        <p class="text-lg mb-10 max-w-3xl mx-auto" style="color:var(--dim);">
          Dive into our detailed breakdown of the bots we designed for
 ABU Robocon 2024 - their roles, challenges, design goals,
 and how they tackled the "Harvest Day" problem statement.
@@ -145,15 +293,18 @@ and how they tackled the "Harvest Day" problem statement.
 
         <!-- 📽️ Video -->
         <div class="mb-12 max-w-4xl mx-auto shadow-lg">
-          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-            frameborder="0" allowfullscreen></iframe>
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/FTopsDAp2-o"
+            frameborder="0" allowfullscreen title="2024 Robot Demo Video"></iframe>
         </div>
 
         <!-- 🤖 Robot 1 -->
-        <div class="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-10 text-left max-w-5xl mx-auto">
-          <h3 class="text-xl font-semibold text-red-600 mb-2"> R1-Robocon 2024: Manual Farming Bot</h3>
-          <img src="0e2f16d8-0565-401a-982a-7ce56f400efa.png" class="w-full max-w-md mb-4 rounded"
-            alt="Shooter Robot" />
+        <div class="chassis-card p-6 mb-10 text-left max-w-5xl mx-auto">
+          <h3 class="text-xl font-semibold text-orange-500 mb-2"> R1-Robocon 2024: Manual Farming Bot</h3>
+          <div class="robot-photo-frame w-full max-w-md mb-4">
+            <img src="img/robot-2024-r1.png" alt="Manual Farming Robot"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-robot"></i></div>
+          </div>
           <p>
            Our first robot from 2024 was a manually controlled farming bot designed for planting saplings
  and transferring grains across the arena. It was operated using a custom wireless app, giving the
@@ -176,9 +327,13 @@ and how they tackled the "Harvest Day" problem statement.
         </div>
 
         <!-- 🛡️ Robot 2 -->
-        <div class="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-10 text-left max-w-5xl mx-auto">
-          <h3 class="text-xl font-semibold text-red-600 mb-2">R2–Robocon 2024: Autonomous Silo Bot</h3>
-          <img src="your_second_robot_image.png" class="w-full max-w-md mb-4 rounded" alt="Assist Robot" />
+        <div class="chassis-card p-6 mb-10 text-left max-w-5xl mx-auto">
+          <h3 class="text-xl font-semibold text-orange-500 mb-2">R2–Robocon 2024: Autonomous Silo Bot</h3>
+          <div class="robot-photo-frame w-full max-w-md mb-4">
+            <img src="img/robot-2024-r2.png" alt="Autonomous Silo Robot"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-robot"></i></div>
+          </div>
           <p>
             Our second bot from 2024 was fully autonomous and focused on picking grains and placing them
  into silos. It navigated the field using mecanum wheels, which let it move in any direction without
@@ -195,43 +350,124 @@ table that helped it decide which silo to go to next. With features like dead re
             <b> • Software:</b>  Python (OpenCV, PyTorch), PX4 Autopilot, MATLAB<br>
             <b>• Sensors:</b>  IMUs, LSA08 line sensors, Hall encoders, Pi Cameras, Reflective lasers<br>
             <b>• Control Systems:</b>  Reinforcement Learning (Q-Learning), Adaptive PID<br>
+          </p>
         </div>
-
 
       </div>
 
     </div>
   </section>
+
   <!-- Future robots can be added similarly -->
   <section class="max-w-6xl mx-auto px-6 py-12 text-center" data-aos="fade-up">
     <h2 class="text-2xl font-bold mb-2">More Robots Coming Soon</h2>
-    <p class="text-gray-600 dark:text-gray-400">Stay tuned for our previous and upcoming Robocon entries!</p>
+    <p style="color:var(--dim);">Stay tuned for our previous and upcoming Robocon entries!</p>
   </section>
 
-  <!-- Footer -->
-  <footer class="text-center py-6 text-sm bg-black text-white">
-    © 2025 Team Phoenix - IIT Patna Robocon
+  <!-- 🌟 FOOTER -->
+  <footer class="bg-black text-white px-6 pt-10 pb-6 relative border-t border-orange-500 shadow-inner z-50">
+    <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-3 text-center md:text-left">
+
+      <div>
+        <div class="flex items-center justify-center md:justify-start mb-2">
+          <img src="image1-removebg-preview.png" alt="Phoenix Logo" class="h-10 w-10 mr-2">
+          <span class="text-lg font-bold" style="font-family:'Orbitron',sans-serif;">Team Phoenix<span class="text-orange-500">.</span></span>
+        </div>
+        <p class="text-sm text-gray-400">Official Robotics Team of IIT Patna.</p>
+      </div>
+
+      <div>
+        <h3 class="text-orange-500 font-semibold text-lg mb-2">Quick Links</h3>
+        <ul class="space-y-1 text-sm text-gray-300">
+          <li><a href="index.html" class="hover:text-orange-400"> Home</a></li>
+          <li><a href="team.html" class="hover:text-orange-400"> Team</a></li>
+          <li><a href="gallery.html" class="hover:text-orange-400">Gallery</a></li>
+          <li><a href="resource.html" class="hover:text-orange-400">Resources</a></li>
+          <li><a href="contact.html" class="hover:text-orange-400"> Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-orange-500 font-semibold text-lg mb-2">Contact</h3>
+        <div class="space-y-2 text-sm text-gray-300">
+          <p class="flex items-center justify-center md:justify-start gap-2">
+            <i class="fas fa-map-marker-alt text-green-400 text-lg"></i>
+            <span>IIT Patna, India</span>
+          </p>
+        </div>
+        <div class="flex justify-center md:justify-start mt-4 space-x-5 text-xl">
+          <a href="https://instagram.com/teamphoenix.iitp" target="_blank" title="Instagram" class="hover:scale-110 transition-transform">
+            <img src="https://img.icons8.com/fluency/30/instagram-new.png" alt="Instagram" />
+          </a>
+          <a href="https://linkedin.com/company/teamphoenixiitp" target="_blank" title="LinkedIn" class="hover:scale-110 transition-transform">
+            <img src="https://img.icons8.com/fluency/30/linkedin.png" alt="LinkedIn" />
+          </a>
+          <a href="mailto:robocon@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
+            <img src="https://img.icons8.com/fluency/30/new-post.png" alt="Email" />
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center text-xs text-gray-500 mt-8 border-t border-gray-700 pt-4">
+      © 2025 Team Phoenix - IIT Patna Robocon
+    </div>
   </footer>
 
   <script>
     AOS.init();
-  </script>
- 
 
-
-<script>
-  function toggleRobotDemo(id) {
-    const allDemos = document.querySelectorAll("[id^='robot-demo-']");
-    allDemos.forEach(demo => {
-      if (demo.id === id) {
-        demo.classList.toggle("hidden");
-        demo.scrollIntoView({ behavior: "smooth" });
-      } else {
-        demo.classList.add("hidden"); // hide others
-      }
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#f97316" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 1 },
+        "size": { "value": 5, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#f97316", "opacity": 0.6, "width": 1 },
+        "move": { "enable": true, "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "repulse" },
+          "resize": true
+        }
+      },
+      "retina_detect": true
     });
-  }
-</script>
+
+    function toggleRobotDemo(id) {
+      const allDemos = document.querySelectorAll("[id^='robot-demo-']");
+      allDemos.forEach(demo => {
+        if (demo.id === id) {
+          demo.classList.toggle("hidden");
+          demo.scrollIntoView({ behavior: "smooth" });
+        } else {
+          demo.classList.add("hidden"); // hide others
+        }
+      });
+    }
+
+    const burger = document.getElementById("burger");
+    const menu = document.getElementById("menu");
+    const overlay = document.getElementById("menu-overlay");
+    const closeMenuBtn = document.getElementById("close-menu");
+
+    function openMenu() {
+      menu.style.right = "0px";
+      overlay.classList.remove("hidden");
+    }
+    function closeMenu() {
+      menu.style.right = "-100%";
+      overlay.classList.add("hidden");
+    }
+
+    burger.addEventListener("click", openMenu);
+    overlay.addEventListener("click", closeMenu);
+    closeMenuBtn.addEventListener("click", closeMenu);
+  </script>
 
 </body>
 

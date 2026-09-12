@@ -14,9 +14,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Our Team - Team Phoenix</title>
+  <link rel="icon" type="image/png" href="img/11111.png">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;500;700&family=Montserrat:wght@400;500;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
   <!-- Tailwind (for utility classes) -->
@@ -113,7 +114,7 @@ nav a.active::after {
         #000;
       position:absolute; inset:0; z-index:-1; background-repeat:no-repeat; background-size:cover;
     }
-    #home { position:relative; height:80vh; display:grid; align-items:center; padding: top 56px; overflow:hidden; }
+    #home { position:relative; height:80vh; display:grid; align-items:center; padding-top: 56px; overflow:hidden; }
 
     /* Contact section */
     .contact-section { position:relative; padding:60px 20px 100px; z-index:1; background:transparent; }
@@ -341,11 +342,132 @@ nav a.active::after {
   z-index: 1;
 }
 
+  
+/* =========================================================
+   PHOENIX DESIGN SYSTEM — shared across all pages
+   Chassis-plate card language: chamfered (cut) corners +
+   embedded corner rivets + a slow ember seam on the edge,
+   replacing plain rounded-rectangle cards site-wide.
+   ========================================================= */
+:root{
+  --void:#050505;
+  --panel:#121214;
+  --panel-2:#0a0a0b;
+  --ember1:#f97316;
+  --ember2:#ff5a1f;
+  --ember-glow:rgba(249,115,22,.45);
+  --steel:#d9dade;
+  --dim:#9a9aa1;
+  --line:rgba(255,255,255,.08);
+}
+
+/* Two-typeface system: Orbitron for display, Rajdhani for body —
+   both geometric/technical, but clearly distinct in texture. */
+body, p, a, li, input, select, textarea, button, label, span {
+  font-family: 'Rajdhani', 'Poppins', sans-serif;
+}
+h1, h2, h3, h4 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: .3px;
+}
+body { font-size: 1.05rem; font-weight: 500; }
+p { line-height: 1.7; }
+
+/* ---- Chassis card: the shared "cut-corner plate" component ---- */
+.chassis-card{
+  position: relative;
+  background:
+    radial-gradient(circle 3px at calc(100% - 18px) 18px, var(--ember1) 99%, transparent 100%),
+    radial-gradient(circle 3px at 18px calc(100% - 18px), var(--ember1) 99%, transparent 100%),
+    linear-gradient(155deg, var(--panel) 0%, var(--panel-2) 100%);
+  border: 1px solid var(--line);
+  clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+  padding: 30px 26px;
+  box-shadow: 0 10px 26px rgba(0,0,0,.5);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.chassis-card::before{
+  content:"";
+  position:absolute; inset:0;
+  clip-path:inherit;
+  padding:1.5px;
+  background:linear-gradient(120deg, var(--ember1), transparent 40%, transparent 60%, var(--ember1));
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+  opacity:.45;
+  pointer-events:none;
+  transition:opacity .35s ease;
+}
+.chassis-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(249,115,22,.22);
+}
+.chassis-card:hover::before{ opacity: 1; }
+.chassis-card h3, .chassis-card h4{ color:#fff; margin-bottom:8px; }
+.chassis-card p{ color: var(--dim); }
+.chassis-card .chassis-icon{
+  width:52px; height:52px; object-fit:contain; margin-bottom:14px;
+}
+.chassis-card a.chassis-link{
+  display:inline-block;
+  margin-top:10px;
+  color: var(--ember1);
+  font-weight:700;
+  text-decoration:none;
+  border-bottom:1px solid transparent;
+  transition:border-color .25s ease, color .25s ease;
+}
+.chassis-card a.chassis-link:hover{
+  color:#ffb457;
+  border-color:#ffb457;
+}
+
+/* Same chamfer language applied to existing card systems, via their
+   existing class names — no markup changes needed for these. */
+.flip-card-front, .flip-card-back{
+  border-radius: 0 !important;
+  clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
+}
+.team-front, .team-back{
+  border-radius: 0 !important;
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+}
+
+/* ---- Gallery: chamfered frames instead of plain rounded thumbs ---- */
+.gallery-shot{
+  border-radius: 0 !important;
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px) !important;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 20px rgba(0,0,0,.5);
+  transition: transform .35s ease, box-shadow .35s ease, filter .35s ease !important;
+  filter: saturate(.9) brightness(.92);
+}
+.gallery-shot:hover{
+  transform: scale(1.035) !important;
+  filter: saturate(1.05) brightness(1);
+  box-shadow: 0 14px 34px rgba(249,115,22,.3);
+}
+
+/* ---- Contact / info panels reusing the chassis language ---- */
+.contact-info, .contact-form{
+  background:
+    radial-gradient(circle 3px at calc(100% - 18px) 18px, var(--ember1) 99%, transparent 100%),
+    radial-gradient(circle 3px at 18px calc(100% - 18px), var(--ember1) 99%, transparent 100%),
+    linear-gradient(155deg, var(--panel) 0%, var(--panel-2) 100%) !important;
+  border: 1px solid var(--line);
+  border-radius: 0 !important;
+  clip-path: polygon(18px 0, 100% 0, 100% calc(100% - 18px), calc(100% - 18px) 100%, 0 100%, 0 18px);
+}
+.contact-header-box{
+  border-radius: 0 !important;
+  clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+  border-left: 2px solid var(--ember1);
+}
+
   </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
 <!-- NAVBAR -->
 <nav class="fixed top-0 left-0 right-0 z-50 bg-black flex items-center justify-between px-4 py-2">
   <!-- Logo -->
@@ -517,7 +639,7 @@ nav a.active::after {
         <h3>Anand</h3>
         <p>Mechanical Lead</p>
         <div class="social-links">
-          <a href="www.linkedin.com/in/anand-pdt" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/anand-pdt" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
     </div>
@@ -670,7 +792,7 @@ nav a.active::after {
         <h3>Rudranshu</h3>
         <p>Core Member</p>
         <div class="social-links">
-          <a href=" https://in.linkedin.com/in/rudranshu-mishra-335441330 " target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://in.linkedin.com/in/rudranshu-mishra-335441330" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
     </div>
@@ -689,7 +811,7 @@ nav a.active::after {
         <h3>Anany</h3>
         <p>Core Member</p>
         <div class="social-links">
-          <a href="www.linkedin.com/in/anany-raghav-964345329" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/in/anany-raghav-964345329" target="_blank"><i class="fab fa-linkedin"></i></a>
         </div>
       </div>
     </div>
@@ -1016,7 +1138,7 @@ nav a.active::after {
   <div class="space-y-2 text-sm text-gray-300">
     <p class="flex items-center justify-center md:justify-start gap-2">
       <i class="fas fa-envelope text-yellow-400 text-lg"></i>
-     
+      <a href="mailto:robocon@iitp.ac.in" class="hover:text-orange-400">robocon@iitp.ac.in</a>
     </p>
     
     <p class="flex items-center justify-center md:justify-start gap-2">
@@ -1032,7 +1154,7 @@ nav a.active::after {
     <a href="https://linkedin.com/company/teamphoenixiitp" target="_blank" title="LinkedIn" class="hover:scale-110 transition-transform">
       <img src="https://img.icons8.com/fluency/30/linkedin.png" alt="LinkedIn" />
     </a>
-    <a href="mailto:teamphoenix@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
+    <a href="mailto:robocon@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
       <img src="https://img.icons8.com/fluency/30/new-post.png" alt="Email" />
     </a>
   </div>
@@ -1049,13 +1171,14 @@ nav a.active::after {
  
  
 
-  <!-- FontAwesome CDN -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </footer>
 
  <script>
     AOS.init();
-    window.onload = () => document.getElementById("preloader").style.display = "none";
+    window.onload = () => {
+      const preloader = document.getElementById("preloader");
+      if (preloader) preloader.style.display = "none";
+    };
 
     function toggleTheme() {
       document.documentElement.classList.toggle("dark");
@@ -1088,24 +1211,6 @@ nav a.active::after {
         }
       },
       "retina_detect": true
-    });
- window.addEventListener('load', () => {
-      document.getElementById('hero-img').classList.remove('opacity-0');
-      setTimeout(() => {
-        document.getElementById('hero-heading').classList.remove('opacity-0');
-      }, 200);
-      const words = "Engineering | Innovation | Teamwork | Robotics".split(" ");
-      const sub = document.getElementById('hero-subheading');
-      let i = 0;
-      setTimeout(() => {
-        const interval = setInterval(() => {
-          if (i < words.length) {
-            sub.innerHTML += words[i] + " ";
-            sub.classList.remove('opacity-0');
-            i++;
-          } else clearInterval(interval);
-        }, 100);
-      }, 1000);
     });
 
   const teamCarousel = document.querySelector('.team-carousel');

@@ -194,47 +194,12 @@ nav ul {
 }
 
 
-  /* 🌈 Keyframe for global gradient animation
-  @keyframes global-gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-/*@media (max-width: 1024px) {
-  .iit-center-text {
-    display: none !important;
-  }
-}
- */
   body {
     background: linear-gradient(120deg, #000 0%, #0b0e17 50%, #000 100%);
     background-size: 300% 300%;
     animation: global-gradient 25s ease infinite;
     color: white;
   }
-   /* decorative gradient bg
-    .gradient-bg {
-      position:absolute; inset:0; width:100%; height:100%; left:-25%; top:-25%;
-      background: radial-gradient(circle at center,#ff4500 0%, #0a0a0a 70%);
-      opacity:0.12; transform:rotate(25deg); z-index:0;
-    }
-
- 🟠 Corner Glow Effect Across Page 
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background:
-      radial-gradient(circle at top left, rgba(255,120,0,0.15), transparent 50%),
-      radial-gradient(circle at bottom right, rgba(255,94,0,0.15), transparent 50%);
-    z-index: -1;
-    animation: glow-pulse 8s ease-in-out infinite;
-  }
-
-  @keyframes glow-pulse {
-    0%,100% { opacity: 0.2; }
-    50% { opacity: 0.35; }
-  }*/
   .what-card {
   background: #111; 
   border-radius: 16px;
@@ -313,7 +278,6 @@ nav ul {
   background: #f97316;
   border-radius: 8px;
 }
-/* Testimonial section background animation */
 /* Testimonial Card Styling */
 .testimonial-card {
   position: relative;
@@ -711,7 +675,7 @@ nav ul {
   <div class="hidden md:block font-semibold text-white">IIT Patna</div>
   <!-- Desktop Menu -->
   <ul class="hidden md:flex gap-6">
-    <li><a href="1.html" class="active">Home</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="resource.html">Resources</a></li>
@@ -730,7 +694,7 @@ nav ul {
 <!-- Mobile Menu -->
 <div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full bg-black text-white transform translate-x-full transition-transform duration-300 z-40">
   <ul class="flex flex-col p-6 space-y-4">
-    <li><a href="1.html" class="active">Home</a></li>
+    <li><a href="index.html" class="active">Home</a></li>
     <li><a href="team.html">Team</a></li>
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="resource.html">Resources</a></li>
@@ -771,12 +735,6 @@ nav ul {
 </section>
 
 
-    </div>
-  </section>
-
-
-
-
   <!-- 🧠 About Section -->
  
   <section id="about" class="contact-section" style="position:relative; overflow:visible;">
@@ -788,7 +746,7 @@ nav ul {
      <div class="relative w-full h-[300px] overflow-hidden rounded-lg shadow-lg transition-opacity duration-800" id="about-image">
 
         <div id="about-slider" class="w-full h-full relative">
-          <img src="1.jpg"
+          <img src="img/1.jpg"
             class="about-slide absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 opacity-100"
             alt="Robot 1">
           <img src="img/2.jpg"
@@ -1062,7 +1020,6 @@ nav ul {
           </div>
         </div>
 
-        <!-- Navigation buttons -->
         <!-- Navigation buttons & dots -->
         <div class="flex justify-center items-center mt-4 space-x-3">
           <button id="contest-prev" class="bg-orange-500 text-white px-3 py-1 rounded-full shadow">❮</button>
@@ -1079,9 +1036,8 @@ nav ul {
 
       </div>
     </div>
-  </section>
-
-  </section>
+  </div>
+ </section>
 
 
  <!-- 🔘 View Our Robots Button -->
@@ -1092,10 +1048,6 @@ nav ul {
     🔧 View Our Robots
   </a>
 </div>
-
- 
-
-
 
   <section id="testimonials" class="contact-section relative overflow-visible">
    <div class="w-3/4 mx-auto my-12 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
@@ -1126,7 +1078,7 @@ nav ul {
           <h3 class="text-xl font-bold">Shivank Goyal</h3>
           <p class="text-sm italic mb-4 text-gray-400">Team Member 2024-2025</p>
           <p class="text-gray-700 dark:text-gray-300">
-            <span class="testimonial-text">Being part of the robotics team has been one of the best experiences of my college life. From late night builds to the thrill of Robocon and IROC, it’s been a journey filled with learning, teamwork, and some serious fun. Grateful to have shared it with my amazing juniors. You guys made it even better. These memories and skills will stick with me for life.</span>
+            <span class="testimonial-text">Being part of the robotics team has been one of the best experiences of my college life. From late night builds to the thrill of Robocon and IROC, it’s been a journey filled with learning, teamwork, and some serious fun. Grateful to have shared it with my amazing juniors. You guys made it even better. These memories and skills will stick with me for life.</span>
             <span class="see-more-btn">See more</span>
           </p>
         </div>
@@ -1148,7 +1100,7 @@ nav ul {
           <h3 class="text-xl font-bold">Akshat Jain</h3>
           <p class="text-sm italic mb-4 text-gray-400">Alumni and Team Captain 2020-2021</p>
           <p class="text-gray-700 dark:text-gray-300">
-            <span class="testimonial-text">We can draw a lot of motivation and inspiration from our team because just like the Pheonix, they have come out more stronger and ambitious than before.</span>
+            <span class="testimonial-text">We can draw a lot of motivation and inspiration from our team because just like the Pheonix, they have come out more stronger and ambitious than before.</span>
             <span class="see-more-btn">See more</span>
           </p>
         </div>
@@ -1242,79 +1194,32 @@ nav ul {
         </div>
 
       </div>
-    </div>
-  </div>
-</section>
 
-        <!-- Add more testimonials here -->
-      </div>
-
-      <!-- Navigation -->
-       <!-- Progress bar above testimonial dots -->
-<div id="testimonial-progress" class="h-1 bg-orange-500 rounded-full transition-all duration-300"></div>
-
+      <!-- Progress bar above testimonial dots -->
+      <div id="testimonial-progress" class="h-1 bg-orange-500 rounded-full transition-all duration-300"></div>
 
       <!-- Navigation buttons & dots -->
-<div class="flex justify-center items-center mt-4 mb-10  space-x-3">
-  <button id="testimonial-prev" class="bg-orange-500 text-white px-3 py-1 rounded-full shadow">❮</button>
-  <div id="testimonial-dots" class="flex space-x-2">
-    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-     <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-     <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-     <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
-  </div>
-  <button id="testimonial-next" class="bg-orange-500 text-white px-3 py-1 rounded-full shadow">❯</button>
-</div>
+      <div class="flex justify-center items-center mt-4 mb-10  space-x-3">
+        <button id="testimonial-prev" class="bg-orange-500 text-white px-3 py-1 rounded-full shadow">❮</button>
+        <div id="testimonial-dots" class="flex space-x-2">
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+        </div>
+        <button id="testimonial-next" class="bg-orange-500 text-white px-3 py-1 rounded-full shadow">❯</button>
+      </div>
     </div>
+  </div>
   </section>
-
-  <script>
-    
-   
-    document.getElementById('prev').addEventListener('click', () => {
-      index--;
-      updateSlide();
-    });
-
-    // Auto-slide every 5s
-    setInterval(() => {
-      index++;
-      updateSlide();
-    }, 5000);
-
-    // Touch swipe support
-    track.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-      isDragging = true;
-    });
-    track.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
-      let moveX = e.touches[0].clientX - startX;
-      track.style.transform = `translateX(${-index * cardWidth + moveX}px)`;
-    });
-    track.addEventListener('touchend', (e) => {
-      isDragging = false;
-      let endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) index++;
-      if (endX - startX > 50) index--;
-      updateSlide();
-    });
-
-    // Initial state
-    updateSlide();
-  </script>
-
-
-
-
 
  <!-- 🌟 FOOTER -->
 <footer class="bg-black text-white px-6 pt-10 pb-6 relative border-t border-orange-500 shadow-inner z-50">
@@ -1349,7 +1254,7 @@ nav ul {
   <div class="space-y-2 text-sm text-gray-300">
     <p class="flex items-center justify-center md:justify-start gap-2">
       <i class="fas fa-envelope text-yellow-400 text-lg"></i>
-     
+      <a href="mailto:robocon@iitp.ac.in" class="hover:text-orange-400">robocon@iitp.ac.in</a>
     </p>
     
     <p class="flex items-center justify-center md:justify-start gap-2">
@@ -1365,7 +1270,7 @@ nav ul {
     <a href="https://linkedin.com/company/teamphoenixiitp" target="_blank" title="LinkedIn" class="hover:scale-110 transition-transform">
       <img src="https://img.icons8.com/fluency/30/linkedin.png" alt="LinkedIn" />
     </a>
-    <a href="mailto:teamphoenix@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
+    <a href="mailto:robocon@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
       <img src="https://img.icons8.com/fluency/30/new-post.png" alt="Email" />
     </a>
   </div>
@@ -1379,9 +1284,6 @@ nav ul {
     &copy; 2025 Team Phoenix – IIT Patna.
   </div>
 
- 
- 
-
   <!-- FontAwesome CDN -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </footer>
@@ -1389,36 +1291,6 @@ nav ul {
   <!-- Scripts -->
   <script>
     AOS.init();
-
-    window.onload = () => {
-     
-      // ✅ Hero image slider logic
-      const heroImages = document.querySelectorAll("#slider img");
-      let heroIndex = 0;
-
-      setInterval(() => {
-        heroImages[heroIndex].classList.remove("opacity-100");
-        heroImages[heroIndex].classList.add("opacity-0");
-
-        heroIndex = (heroIndex + 1) % heroImages.length;
-
-        heroImages[heroIndex].classList.remove("opacity-0");
-        heroImages[heroIndex].classList.add("opacity-100");
-      }, 4000); // change image every 4 seconds
-
-      // ✅ Testimonial slider logic
-      const slides = document.querySelectorAll('#testimonial-slider .slide');
-      let current = 0;
-      slides[current].classList.add('opacity-100');
-
-      setInterval(() => {
-        slides[current].classList.remove('opacity-100');
-        slides[current].classList.add('opacity-0');
-        current = (current + 1) % slides.length;
-        slides[current].classList.remove('opacity-0');
-        slides[current].classList.add('opacity-100');
-      }, 5000);
-    };
 
     function toggleTheme() {
       document.body.classList.toggle("dark");
@@ -1428,8 +1300,6 @@ nav ul {
     if (localStorage.theme === 'dark') {
       document.body.classList.add("dark");
     }
-
-
   </script>
   <script>
     particlesJS("particles-js", {
@@ -1529,15 +1399,6 @@ nav ul {
   </script>
 
   <script>
-    // ✅ Close menu when clicking a link
-    document.querySelectorAll('#mobileMenu a').forEach(link => {
-      link.addEventListener('click', () => {
-        document.getElementById('mobileMenu').style.display = "none";
-        document.getElementById('mobileMenu').classList.remove('show');
-        document.getElementById('burger-lines').classList.remove('burger-active');
-      });
-    });
-
     // ✅ Close menu when clicking outside
     document.addEventListener('click', (event) => {
       const menu = document.getElementById('mobileMenu');
@@ -1545,34 +1406,8 @@ nav ul {
       if (menu.classList.contains('show') && !menu.contains(event.target) && !burger.contains(event.target)) {
         menu.style.display = "none";
         menu.classList.remove('show');
-        document.getElementById('burger-lines').classList.remove('burger-active');
       }
     });
-  </script>
-  <script>
-    
-  
-    document.getElementById('contest-prev').addEventListener('click', () => {
-      contestIndex--;
-      updateContestSlide();
-    });
-
-    // Optional: click on dots to navigate
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        contestIndex = i;
-        updateContestSlide();
-      });
-    });
-
-    // Auto-slide every 6s
-    setInterval(() => {
-      contestIndex++;
-      updateContestSlide();
-    }, 6000);
-
-    // Initialize
-    updateContestSlide();
   </script>
 <script>
   window.addEventListener('load', () => {
@@ -1629,31 +1464,6 @@ nav ul {
   // 🔁 Start observing the section
   aboutObserver.observe(document.getElementById('about-image'));
 
-
-</script>
-
-<script>
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        // Reveal all About elements
-        document.getElementById('about-image').classList.remove('opacity-0');
-        setTimeout(() => {
-          document.getElementById('about-heading').classList.remove('opacity-0');
-        }, 300);
-        setTimeout(() => {
-          document.getElementById('about-para').classList.remove('opacity-0');
-        }, 600);
-
-        // Only trigger once
-        observer.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-
-  // Observe the entire About section (or just the image)
-  observer.observe(document.getElementById('about-image'));
-
 const whatCards = document.querySelectorAll('.what-card');
 const whatSection = document.getElementById('what-we-do');
 
@@ -1686,9 +1496,6 @@ window.addEventListener('load', () => {
     revealWhatCards();
   }
 });
-
-
-
 
 </script>
 
@@ -1745,9 +1552,7 @@ function initSlider(trackId, dotContainerId, prevBtnId, nextBtnId) {
   updateDots(0);
 }
 
-// ✅ Init for both sliders
-initSlider('testimonial-track', 'testimonial-dots', 'testimonial-prev', 'testimonial-next');
-
+// ✅ Init for contest slider (testimonials use their own richer slider below)
 initSlider('contest-track', 'contest-dots', 'contest-prev', 'contest-next');
 
 </script>
@@ -1783,6 +1588,9 @@ initSlider('contest-track', 'contest-dots', 'contest-prev', 'contest-next');
       dot.classList.toggle('bg-orange-500', i === activeIndex);
       dot.classList.toggle('bg-gray-400', i !== activeIndex);
       dot.classList.toggle('dark:bg-gray-600', i !== activeIndex);
+    });
+    testimonialSlides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === activeIndex);
     });
   }
 
@@ -1857,10 +1665,6 @@ window.addEventListener('resize', () => {
   // Initialize
   updateDots(0);
   updateProgress(0);
-  testimonialSlides.forEach((slide, i) => {
-  slide.classList.toggle('active', i === activeIndex);
-});
-
 </script>
 
 
