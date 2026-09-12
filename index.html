@@ -679,12 +679,6 @@ nav ul {
 }
 
 
-/* =========================================================
-   PHOENIX DESIGN SYSTEM — shared across all pages
-   Chassis-plate card language: chamfered (cut) corners +
-   embedded corner rivets + a slow ember seam on the edge,
-   replacing plain rounded-rectangle cards site-wide.
-   ========================================================= */
 :root{
   --void:#050505;
   --panel:#121214;
@@ -697,8 +691,6 @@ nav ul {
   --line:rgba(255,255,255,.08);
 }
 
-/* Two-typeface system: Orbitron for display, Rajdhani for body —
-   both geometric/technical, but clearly distinct in texture. */
 body, p, a, li, input, select, textarea, button, label, span {
   font-family: 'Rajdhani', 'Poppins', sans-serif;
 }
@@ -709,7 +701,6 @@ h1, h2, h3, h4 {
 body { font-size: 1.05rem; font-weight: 500; }
 p { line-height: 1.7; }
 
-/* ---- Chassis card: the shared "cut-corner plate" component ---- */
 .chassis-card{
   position: relative;
   background:
@@ -758,8 +749,6 @@ p { line-height: 1.7; }
   border-color:#ffb457;
 }
 
-/* Same chamfer language applied to existing card systems, via their
-   existing class names — no markup changes needed for these. */
 .flip-card-front, .flip-card-back{
   border-radius: 0 !important;
   clip-path: polygon(16px 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%, 0 16px);
@@ -769,7 +758,6 @@ p { line-height: 1.7; }
   clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
 }
 
-/* ---- Gallery: chamfered frames instead of plain rounded thumbs ---- */
 .gallery-shot{
   border-radius: 0 !important;
   clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px) !important;
@@ -784,7 +772,6 @@ p { line-height: 1.7; }
   box-shadow: 0 14px 34px rgba(249,115,22,.3);
 }
 
-/* ---- Contact / info panels reusing the chassis language ---- */
 .contact-info, .contact-form{
   background:
     radial-gradient(circle 3px at calc(100% - 18px) 18px, var(--ember1) 99%, transparent 100%),
