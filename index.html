@@ -1389,7 +1389,7 @@ nav ul {
 
   <!-- Scripts -->
   <script>
-    AOS.init();
+    if (window.AOS) AOS.init();
 
     window.onload = () => {
      
@@ -1433,7 +1433,7 @@ nav ul {
 
   </script>
   <script>
-    particlesJS("particles-js", {
+    if (window.particlesJS) particlesJS("particles-js", {
       "particles": {
         "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
         "color": { "value": "#f97316" },  // orange color
@@ -1525,7 +1525,7 @@ nav ul {
     }
     function toggleMenuIcon() {
       toggleMenu();
-      document.getElementById('burger-lines').classList.toggle('burger-active');
+      document.getElementById('burger').classList.toggle('active');
     }
   </script>
 
@@ -1535,7 +1535,7 @@ nav ul {
       link.addEventListener('click', () => {
         document.getElementById('mobileMenu').style.display = "none";
         document.getElementById('mobileMenu').classList.remove('show');
-        document.getElementById('burger-lines').classList.remove('burger-active');
+        document.getElementById('burger').classList.remove('active');
       });
     });
 
@@ -1546,7 +1546,7 @@ nav ul {
       if (menu.classList.contains('show') && !menu.contains(event.target) && !burger.contains(event.target)) {
         menu.style.display = "none";
         menu.classList.remove('show');
-        document.getElementById('burger-lines').classList.remove('burger-active');
+        document.getElementById('burger').classList.remove('active');
       }
     });
   </script>
