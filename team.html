@@ -243,7 +243,7 @@ nav a.active::after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  pointer-events: auto; /* ✅ allow clicking */
+  pointer-events: auto; /*  allow clicking */
   z-index: 2;
 }
 
@@ -399,7 +399,7 @@ nav a.active::after {
   </div>
 </section>
 
- <!-- 👥 Team Section -->
+ <!--  Team Section -->
     
 <section id="team" class="contact-section relative overflow-visible">
   <div class="gradient-bg"></div>
@@ -413,7 +413,7 @@ nav a.active::after {
       <button type="button" id="tab-2026" class="team-tab-btn" onclick="showTeamYear('2026')">Team 2026</button>
     </div>
 
-    <!-- ===== TEAM 2025 ===== -->
+    <!--  TEAM 2025  -->
     <div id="team-2025" class="team-year-section">
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto justify-items-center">
 
@@ -697,16 +697,13 @@ nav a.active::after {
 
 </div>
     </div>
-    <!-- ===== END TEAM 2025 ===== -->
+    <!--  END OF TEAM 2025  -->
 
-    <!-- ===== TEAM 2026 ===== -->
+    <!-- 2026 -->
     <div id="team-2026" class="team-year-section hidden">
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto justify-items-center">
 
-      <!-- Team 2026 — 15 placeholder cards. Photos already exist: place each member's
-           photo at img/2026/member01.jpg ... img/2026/member15.jpg (or edit the src
-           below to match your actual filenames), then replace the name/role/link
-           placeholders. If a photo is missing, a fallback icon shows automatically. -->
+    
 
       <!-- Member 1 -->
       <div class="team-card">
@@ -980,17 +977,17 @@ nav a.active::after {
 
     </div>
     </div>
-    <!-- ===== END TEAM 2026 ===== -->
+    <!-- END OF TEAM 2026-->
 
     </div>
   </div>
   </section>
 
- <!-- 🌟 FOOTER -->
+ <!-- FOOTER -->
 <footer class="bg-black text-white px-6 pt-10 pb-6 relative border-t border-orange-500 shadow-inner z-50">
   <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-3 text-center md:text-left">
 
-    <!-- 👑 Logo + About -->
+    <!-- Logo + About -->
     <div>
       <div class="flex items-center justify-center md:justify-start mb-2">
         <img src="image1-removebg-preview.png" alt="Phoenix Logo" class="h-10 w-10 mr-2">
@@ -999,7 +996,7 @@ nav a.active::after {
       <p class="text-sm text-gray-400">Official Robotics Team of IIT Patna.</p>
     </div>
 
-    <!-- 📂 Quick Links -->
+    <!-- Quick Links -->
     <div>
       <h3 class="text-orange-500 font-semibold text-lg mb-2">Quick Links</h3>
       <ul class="space-y-1 text-sm text-gray-300">
@@ -1011,8 +1008,8 @@ nav a.active::after {
       </ul>
     </div>
 
-    <!-- 📬 Contact & Social -->
-   <!-- 📬 Contact & Social (Updated with Logos & Links) -->
+    <!-- Contact & Social -->
+   <!-- Contact & Social (Updated with Logos & Links) -->
 <div>
   <h3 class="text-orange-500 font-semibold text-lg mb-2">Contact</h3>
   
@@ -1044,7 +1041,7 @@ nav a.active::after {
 
   </div>
 
-  <!-- 🔚 Bottom Note -->
+  <!-- Bottom Note -->
   <div class="text-center text-xs text-gray-500 mt-8 border-t border-gray-700 pt-4">
     &copy; 2025 Team Phoenix – IIT Patna.
   </div>
@@ -1111,10 +1108,6 @@ nav a.active::after {
       }, 1000);
     });
 
-    
-  // NOTE: the team section currently uses a CSS grid layout, not a scrolling
-  // carousel, so this element doesn't exist on the page. Guarded with a null
-  // check so it simply does nothing instead of throwing a console error.
   const teamCarousel = document.querySelector('.team-carousel');
 
   if (teamCarousel) {
@@ -1128,7 +1121,6 @@ nav a.active::after {
     function autoScroll() {
       if (!autoScrollActive) return;
 
-      // Check if end reached
       if (teamCarousel.scrollLeft + teamCarousel.clientWidth >= teamCarousel.scrollWidth - scrollStep) {
         scrollAmount = 0;
         teamCarousel.scrollTo({ left: 0, behavior: 'smooth' });
@@ -1138,17 +1130,14 @@ nav a.active::after {
       }
     }
 
-    // Start auto-scroll
     function startAutoScroll() {
       autoScrollInterval = setInterval(autoScroll, scrollDelay);
     }
 
-    // Stop auto-scroll
     function stopAutoScroll() {
       clearInterval(autoScrollInterval);
     }
 
-    // Pause when user hovers
     teamCarousel.addEventListener('mouseenter', () => {
       autoScrollActive = false;
       stopAutoScroll();
@@ -1159,7 +1148,6 @@ nav a.active::after {
       startAutoScroll();
     });
 
-    // Pause on manual scroll (e.g., dragging, swiping)
     let isScrolling;
     teamCarousel.addEventListener('scroll', () => {
       autoScrollActive = false;
@@ -1168,10 +1156,9 @@ nav a.active::after {
       isScrolling = setTimeout(() => {
         autoScrollActive = true;
         startAutoScroll();
-      }, 1000); // Resume after 3s of no manual scroll
+      }, 1000); 
     });
 
-    // Start it initially
     startAutoScroll();
   }
 
