@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCMJ34W220"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PCMJ34W220');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Team Phoenix - IIT Patna Robocon</title>
+  <link rel="icon" type="image/png" href="img/11111.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Poppins&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+   
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+    html.dark {
+      --tw-bg-opacity: 1;
+      background-color: rgb(15 15 15 / var(--tw-bg-opacity));
+      color: white;
+    }
+
+    .orbitron {
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .poppins {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .fade-in {
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .preloader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: black;
+      color: white;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Orbitron';
+      font-size: 2rem;
+      letter-spacing: 2px;
+    }
+
+    .highlight {
+      color: #f97316;
+      /* orange-500 */
+    }
+  
+#contest-track::-webkit-scrollbar {
+  height: 8px;
+}
+#contest-track::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 8px;
+}
+  nav {
+  background: black;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+
+nav .logo {
+  flex: 0 0 auto;
+}
+
+nav .iit-center-text {
+  flex: 1;
+  text-align: center;
+}
+
+nav ul {
+  flex: 0 0 auto;
+}
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    nav .logo img {
+      height: 35px;
+      width: 35px;
+      object-fit: contain;
+      margin-right: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: white;
+    }
+
+    nav ul li a.active::after,
+    nav ul li a:hover::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: orange;
+    }
+    .iit-center-text {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  flex: 1;
+}
+
+  
+#contest-track::-webkit-scrollbar {
+  height: 8px;
+}
+#contest-track::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 8px;
+}
+#testimonial-track::-webkit-scrollbar {
+  display: none;
+}
+#testimonial-track {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+
+  /* 🌈 Keyframe for global gradient animation
+  @keyframes global-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+/*@media (max-width: 1024px) {
+  .iit-center-text {
+    display: none !important;
+  }
+}
+ */
+  body {
+    background: linear-gradient(120deg, #000 0%, #0b0e17 50%, #000 100%);
+    background-size: 300% 300%;
+    animation: global-gradient 25s ease infinite;
+    color: white;
+  }
+   /* decorative gradient bg
+    .gradient-bg {
+      position:absolute; inset:0; width:100%; height:100%; left:-25%; top:-25%;
+      background: radial-gradient(circle at center,#ff4500 0%, #0a0a0a 70%);
+      opacity:0.12; transform:rotate(25deg); z-index:0;
+    }
+
+ 🟠 Corner Glow Effect Across Page 
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(circle at top left, rgba(255,120,0,0.15), transparent 50%),
+      radial-gradient(circle at bottom right, rgba(255,94,0,0.15), transparent 50%);
+    z-index: -1;
+    animation: glow-pulse 8s ease-in-out infinite;
+  }
+
+  @keyframes glow-pulse {
+    0%,100% { opacity: 0.2; }
+    50% { opacity: 0.35; }
+  }*/
+  .what-card {
+  background: #111; 
+  border-radius: 16px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 16px;
+}
+
+.what-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid #f97316; /* Orange border like team cards */
+}
+
+.what-card h4 {
+  font-size: 1.1rem;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.what-card p {
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.what-card:hover {
+  transform: rotateY(10deg) scale(1.05);
+  box-shadow: 0 10px 20px rgba(249, 115, 22, 0.5);
+}
+
+  body {
+  background: linear-gradient(120deg, #000 0%, #0b0e17 50%, #000 100%);
+  color: white;
+}
+.gradient-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  left: -25%;
+  top: -25%;
+  background: radial-gradient(circle at center, #ff4500 0%, #0a0a0a 70%);
+  opacity: 0.12;
+  transform: rotate(25deg);
+  z-index: 0;
+  overflow-x:hidden;
+}
+
+
+#contest-track::-webkit-scrollbar {
+  height: 8px;
+}
+#contest-track::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 8px;
+}
+
+ .black-orange-corners {
+  background:
+    radial-gradient(circle at top left, rgba(255,120,0,0.2), transparent 30%),
+    radial-gradient(circle at bottom right, rgba(255,94,0,0.18), transparent 30%),
+    #000;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#contest-track::-webkit-scrollbar {
+  height: 8px;
+}
+#contest-track::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 8px;
+}
+/* Testimonial section background animation */
+/* Testimonial Card Styling */
+.testimonial-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(10, 10, 10, 0.92), rgba(30, 20, 15, 0.95));
+  border: 2px solid rgba(255, 121, 0, 0.4);
+  border-radius: 20px;
+  backdrop-filter: blur(6px);
+  padding: 24px;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 18px rgba(255,121,0,0.2);
+  overflow: hidden;
+}
+
+/* Neon animated border */
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(120deg, #ff7300, #ffb366, #ff7300);
+  background-size: 200% 200%;
+  animation: neonMove 6s infinite linear;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, 
+                 linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Hide see-more by default (desktop) */
+.see-more-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .testimonial-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Number of lines before truncation */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .testimonial-text.expanded {
+    -webkit-line-clamp: unset;
+    display: block;
+  }
+  .see-more-btn {
+    color: orange;
+    cursor: pointer;
+    font-weight: bold;
+    display: inline-block; /* show only on phones */
+    margin-top: 5px;
+  }
+}
+
+@keyframes neonMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover effect */
+.testimonial-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 0 25px rgba(255,121,0,0.5);
+}
+
+/* Active Card */
+.testimonial-card.active {
+  transform: translateY(-8px) scale(1.04);
+  border-color: rgba(255, 121, 0, 1);
+  box-shadow: 0 0 30px rgba(255,121,0,0.8);
+}
+
+/* Avatar */
+.testimonial-card img {
+  border: 3px solid rgba(255, 121, 0, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 12px rgba(255, 121, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+.testimonial-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Name and title */
+.testimonial-card h3 {
+  font-family: 'Orbitron', sans-serif;
+  color: #ffae70;
+  font-size: 1.4rem;
+}
+.testimonial-card p {
+  font-family: 'Poppins', sans-serif;
+  color: #ccc;
+}
+
+#testimonial-bg {
+  background: radial-gradient(circle at center, rgba(255,120,0,0.05), rgba(0,0,0,0.9));
+  overflow: hidden;
+}
+
+.shape {
+  position: absolute;
+  opacity: 0.15;
+  animation: floatShape linear infinite;
+}
+
+.shape img {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(0 0 10px rgba(255, 121, 0, 0.8));
+}
+
+@keyframes floatShape {
+  0% { transform: translateY(120vh) rotate(0deg); }
+  100% { transform: translateY(-20vh) rotate(360deg); }
+}
+#mobileMenu.show {
+  transform: translateX(0);
+}
+#burger span {
+  transition: transform 0.3s, opacity 0.3s;
+}
+#burger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+#burger.active span:nth-child(2) {
+  opacity: 0;
+}
+#burger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+@media (max-width: 768px) {
+  nav {
+    flex-wrap: wrap; /* allow items to go to new line */
+  }
+  nav ul {
+    display: none; /* hide normal menu on mobile */
+  }
+  .iit-center-text {
+    order: 3; /* move below burger+logo */
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+  }
+  #burger {
+    display: flex !important;
+  }
+}
+@media (max-width: 768px) {
+  #about-image {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 280px;
+  perspective: 1200px; /* stronger 3D */
+  position: relative;
+  overflow: hidden;   /* ⬅️ keep shine inside */
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55); /* bounce feel */
+  transform-style: preserve-3d;
+  z-index: 1; /* ⬅️ keep card content above shine */
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg) scale(1.05); /* slight zoom */
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; /* Safari fix */
+  transform-style: preserve-3d;
+  will-change: transform;
+
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: border 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+/* ---------------- FLIP CARD BASE ---------------- */
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 280px;
+  perspective: 1200px; /* stronger 3D */
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  
+  /* Hidden state before scroll */
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+}
+
+/* Active animation when visible */
+.flip-card.animate {
+  animation: cardEntry 0.8s ease-out forwards;
+}
+
+/* Moving border effect */
+.flip-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 2px; /* border thickness */
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff7300, #ffae00, #ff7300);
+  background-size: 300% 300%;
+  animation: borderMove 4s linear infinite;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Card inner container */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  transform-style: preserve-3d;
+  z-index: 2; /* above border */
+}
+
+/* Flip on hover */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+/* FRONT & BACK ---------------- */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: border 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  background: #111;
+}
+
+/* FRONT */
+.flip-card-front {
+  color: white;
+  z-index: 2;
+}
+
+/* BACK */
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(145deg, #111, #1e1e1e);
+  color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
+}
+
+/* Fix blurry text on back */
+.flip-card-back h4,
+.flip-card-back p {
+  transform: translateZ(60px);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+  -webkit-font-smoothing: antialiased;
+  z-index: 2;
+}
+
+/* Hover glow */
+.flip-card:hover .flip-card-front,
+.flip-card:hover .flip-card-back {
+  border: 2px solid #f97316;
+  box-shadow: 0 15px 35px rgba(249, 115, 22, 0.6);
+}
+
+/* ✨ Shine effect across card */
+.flip-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.1) 0%, transparent 60%);
+  transform: translateX(-100%);
+  transition: transform 0.8s;
+  border-radius: 16px;
+  pointer-events: none;
+  z-index: 0;
+}
+.flip-card:hover::after {
+  transform: translateX(100%);
+}
+/* Flip on tap (mobile) */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg) scale(1.05);
+}
+
+/* ---------------- ANIMATIONS ---------------- */
+@keyframes cardEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95) rotateX(10deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-8px) scale(1.02) rotateX(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+  }
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Add spacing for flip-cards on small screens */
+@media (max-width: 768px) {
+  #what-we-do .grid {
+    padding-left: 1rem;   /* left gap */
+    padding-right: 1rem;  /* right gap */
+  }
+
+  #what-we-do .flip-card {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+}
+
+</style>
+</head>
+
+<body id="theme-root" class="bg-black text-white transition-colors duration-300">
+
+
+
+
+  <!-- 🔄 Preloader -->
+  <div id="preloader" class="preloader">Launching Team Phoenix.....</div>
+<script>
+    setTimeout(() => {
+      const preloader = document.getElementById("preloader");
+      if (preloader) {
+        // Use a fade-out effect for a smoother transition
+        preloader.style.transition = "opacity 0.5s ease";
+        preloader.style.opacity = "0";
+        // Hide it completely after the fade
+        setTimeout(() => { preloader.style.display = "none"; }, 500);
+      }
+    }, 1000); // 1000 milliseconds = 1 second
+  </script>
+  <!-- 🔝 Navbar -->
+<nav class="fixed top-0 left-0 w-full z-50 bg-black flex items-center justify-between px-4 py-3">
+  <!-- Logo -->
+  <div class="flex items-center">
+    <img src="image1-removebg-preview.png" alt="Team Phoenix Logo" class="h-8 w-8 mr-2">
+    <span class="text-white font-bold text-lg">Team Phoenix<span style="color:orange;">.</span></span>
+  </div>
+  <!-- IIT Patna text (hidden on small screens) -->
+  <div class="hidden md:block font-semibold text-white">IIT Patna</div>
+  <!-- Desktop Menu -->
+  <ul class="hidden md:flex gap-6">
+    <li><a href="1.html" class="active">Home</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="resource.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+     <li><a href="Conspectus_Phoenix.pdf">Collaborate</a></li>
+  </ul>
+
+  <!-- Burger Icon -->
+  <button id="burger" class="md:hidden flex flex-col gap-1">
+    <span class="block w-6 h-0.5 bg-white"></span>
+    <span class="block w-6 h-0.5 bg-white"></span>
+    <span class="block w-6 h-0.5 bg-white"></span>
+  </button>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="fixed top-0 right-0 w-64 h-full bg-black text-white transform translate-x-full transition-transform duration-300 z-40">
+  <ul class="flex flex-col p-6 space-y-4">
+    <li><a href="1.html" class="active">Home</a></li>
+    <li><a href="team.html">Team</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="resource.html">Resources</a></li>
+    <li><a href="contact.html">Contact</a></li>
+     <li><a href="Conspectus_Phoenix.pdf">Collaborate</a></li>
+  </ul>
+</div>
+
+  <!-- 🏠 Hero Section with Image Slider Background -->
+
+
+
+<section id="home" class="relative h-screen overflow-hidden text-white">
+  <!-- 🟠 Orange Glow Only in Corners -->
+  <div class="black-orange-corners"></div>
+
+  <!-- 🟡 Particle Layer -->
+  <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+  <!-- 🏗️ Content -->
+ <div class="relative z-10 max-w-7xl mx-auto h-full grid md:grid-cols-2 items-center px-6">
+  <!-- 🔥 Image appears first -->
+  <div class="flex justify-center">
+    <img src="image1-removebg-preview.png" alt="Phoenix Logo" class="max-h-[80vh] object-contain opacity-0 transition-opacity duration-1000" id="hero-img" />
+  </div>
+
+  <!-- 📝 Text appears with delay -->
+  <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-6">
+    <h1 id="hero-heading" class="text-5xl md:text-6xl orbitron font-bold text-orange-400 drop-shadow-lg opacity-0 transition-opacity duration-1000 delay-500">
+      Team Phoenix
+    </h1>
+    <p id="hero-subheading" class="text-xl poppins text-gray-300 max-w-xl drop-shadow-md opacity-0 transition-opacity duration-1000 delay-1000">
+      <!-- Words will be added one by one using JS -->
+    </p>
+  </div>
+</div>
+
+</section>
+
+
+    </div>
+  </section>
+
+
+
+
+  <!-- 🧠 About Section -->
+ 
+  <section id="about" class="contact-section" style="position:relative; overflow:visible;">
+       
+    <div class="gradient-bg"></div>
+
+    <div class="container">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+     <div class="relative w-full h-[300px] overflow-hidden rounded-lg shadow-lg transition-opacity duration-800" id="about-image">
+
+        <div id="about-slider" class="w-full h-full relative">
+          <img src="1.jpg"
+            class="about-slide absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 opacity-100"
+            alt="Robot 1">
+          <img src="img/2.jpg"
+            class="about-slide absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+            alt="Robot 2">
+          <img src="img/nationals.jpg"
+            class="about-slide absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+            alt="Robot 3">
+          <img src="img/drone.jpg"
+            class="about-slide absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+            alt="Robot 3">
+          <img src="img/mech.jpg"
+            class="about-slide absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+            alt="Robot 3">
+          <img src="img/team three.jpg"
+            class="about-slide absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+            alt="Robot 3">
+          <img src="img/team two.jpg"
+            class="about-slide absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+            alt="Robot 3">
+          <img src="img/poster one.jpg"
+            class="about-slide absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+            alt="Robot 3">
+        </div>
+
+        <!-- Arrows -->
+        <button onclick="prevAboutSlide()"
+          class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full z-10">❮</button>
+        <button onclick="nextAboutSlide()"
+          class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-2 py-1 rounded-full z-10">❯</button>
+      </div>
+
+     <div class="px-4 md:px-0">
+  <h2 id="about-heading" class="text-3xl orbitron mb-4 opacity-0 transition-opacity duration-600">
+    <span class="highlight">About</span> Team Phoenix
+  </h2>
+       <p id="about-para" class="poppins opacity-0 transition-opacity duration-600">We are Team Phoenix, representing IIT Patna in different Robotics competition. Rising with
+          passion, precision and perseverance, our team brings together engineers from diverse fields to build next-gen
+          robots and compete at the national and international stage.</p>
+      </div>
+    </div>
+  </section>
+  <!-- what we do section-->
+<!-- What We Do Section -->
+<section id="what-we-do" class="contact-section relative overflow-visible py-16">
+     <div class="w-3/4 mx-auto my-12 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
+  <div class="gradient-bg"></div>
+  <div class="relative z-10">
+    <h2 class="text-3xl text-center orbitron mb-10 highlight">-What We Do-</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+      <!-- Card 1 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/rover111.png" alt="ISRO Rover" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">ISRO Rover Challenge</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">ISRO Rover Challenge</h4>
+            <p>The Robocon and allied clubs of IIT Patna are dedicated to fostering knowledge-sharing and skill development through events like the ISRO Rover Challenge, where participants can witness captivating demonstrations of our cutting-edge projects.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/ros.jpg" alt="ROS" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">Robot Operating System (ROS)</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">Robot Operating System (ROS)</h4>
+            <p>We architect and refine ROS-based control systems to allow modular, scalable robotic development.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/drone.jpg" alt="Drone" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">Aerial Robotics</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">Aerial Robotics</h4>
+            <p>We design and test autonomous drones and UAVs, working on flight dynamics, computer vision, and real-time control systems to tackle complex aerial tasks.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/ws2.jpg" alt="Workshops" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">Workshops</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">Workshops</h4>
+            <p>Robocon and the allied clubs, including Tinkering Lab, promote skill-building through regular workshops and tech demonstrations.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/bot.jpg" alt="3D CAD" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">Design and Simulate</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">Design and Simulate</h4>
+            <p>We create intricate 3D models and simulations to visualize and iterate ideas with precision before building.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/app.jpg" alt="App Dev" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">Remote Control Apps</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">Remote Control Apps</h4>
+            <p>We develop mobile and web apps to remotely control and monitor our robots and test instruments.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/wild.jpg" alt="Prototype" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">Prototype Wild Mechanisms</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">Prototype Wild Mechanisms</h4>
+            <p>Our engineering journey includes building crazy mechanisms—many fail, but the learning never does.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/ml.jpg" alt="ML OPS" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">ML OPS</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">ML OPS</h4>
+            <p>Deploying experimental ML models for novel tasks in robotics and controls.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 9 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/pcb.jpg" alt="Circuit Design" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">Circuit Design</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">Circuit Design</h4>
+            <p>We design and refine our own PCBs each year with focus on performance and upgradability.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 10 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/f1.png" alt="CAD" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">CAD</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">CAD</h4>
+            <p>We use advanced CAD tools to create adaptable, efficient, and upgradable robot designs.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 11 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/space.jpg" alt="Space Robotics" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">Space Robotics</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">Space Robotics</h4>
+            <p>Working on novel space robotics solutions, testing motion, communication, and terrain handling systems.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 12 -->
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="img/exhibition.jpg" alt="Robotics Exhibition" class="w-full h-40 object-cover rounded-md mb-4" />
+            <h4 class="font-bold text-lg">Robotics Exhibition</h4>
+          </div>
+          <div class="flip-card-back">
+            <h4 class="font-bold text-lg mb-2 text-orange-400">Robotics Exhibition</h4>
+            <p>We showcase ready-made robots, automation prototypes, and innovative creations, offering visitors an interactive experience with cutting-edge technology.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ <section id="contests" class="contact-section relative overflow-visible">
+   <div class="w-3/4 mx-auto my-12 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
+  <div class="gradient-bg"></div>
+  <div class="relative z-10">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2 class="text-3xl orbitron mb-10 highlight">‑What We Participate In‑</h2>
+
+      <div class="relative overflow-hidden">
+        <div id="contest-track" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory">
+          <!-- Slide 1: ABU Robocon -->
+          <div class="flex-none w-full px-4 snap-center">
+            <h3 class="text-lg md:text-xl uppercase text-red-600 font-extrabold tracking-wide mb-3">WHAT IS ABU-ROBOCON?
+            </h3>
+            <h4 class="text-4xl md:text-5xl font-extrabold mb-6 text-white leading-tight">
+  ABU-Robocon is an <span class="text-orange-500">International Robotics Contest</span>
+</h4>
+
+            
+            <p class="text-lg md:text-xl text-white max-w-4xl mx-auto mb-10">
+              Hosted by the Asia-Pacific Broadcasting Union. DD Robocon is the national competition in India, taking
+              place in 3 rounds.
+            </p>
+          </div>
+
+          <!-- Slide 2: IROCU -->
+          <div class="flex-none w-full px-4 snap-center">
+            <h3 class="text-lg md:text-xl uppercase text-red-600 font-extrabold tracking-wide mb-3">WHAT IS IROCU?</h3>
+            <h4 class="text-4xl md:text-5xl font-extrabold mb-6 text-white leading-tight">
+              IRoC-U stands for <span class="text-orange-500">ISRO Robotics Challenge</span>
+            </h4>
+     <p class="text-lg md:text-xl text-white max-w-4xl mx-auto mb-10">
+              A competition organized by ISRO’s U R Rao Satellite Centre (URSC) for the year 2025. It invites students
+              and industry participants to design and develop robotic rovers for future planetary missions.
+            </p>
+          </div>
+
+          <!-- Slide 3: Add more contests if you want -->
+          <div class="flex-none w-full px-4 snap-center">
+            <h3 class="text-lg md:text-xl uppercase text-red-600 font-extrabold tracking-wide mb-3">WHAT IS INTER IIT
+              TECH. MEET?</h3>
+            <h4 class="text-4xl md:text-5xl font-extrabold mb-6 text-white leading-tight">
+              Inter IIT Tech Meet is an <span class="text-orange-500">premier pan‑IIT technology competition</span>
+            </h4>
+          <p class="text-lg md:text-xl text-white max-w-4xl mx-auto mb-10">
+             An annual event where teams from all 23 IITs tackle real-world engineering and tech challenges from industry and research leaders, fostering innovation, collaboration, and knowledge sharing.
+            </p>
+          </div>
+        </div>
+
+        <!-- Navigation buttons -->
+        <!-- Navigation buttons & dots -->
+        <div class="flex justify-center items-center mt-4 space-x-3">
+          <button id="contest-prev" class="bg-orange-500 text-white px-3 py-1 rounded-full shadow">❮</button>
+
+          <!-- dots -->
+          <div id="contest-dots" class="flex space-x-2">
+            <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+            <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+            <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+          </div>
+
+          <button id="contest-next" class="bg-orange-500 text-white px-3 py-1 rounded-full shadow">❯</button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  </section>
+
+
+ <!-- 🔘 View Our Robots Button -->
+   <div class="w-3/4 mx-auto my-12 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
+<div class="flex justify-center my-8 relative z-10">
+  <a href="bot.html"
+    class="inline-block px-8 py-4 bg-orange-500 hover:bg-orange-600 text-dark text-lg font-semibold rounded-full transition duration-300 shadow-lg">
+    🔧 View Our Robots
+  </a>
+</div>
+
+ 
+
+
+
+  <section id="testimonials" class="contact-section relative overflow-visible">
+   <div class="w-3/4 mx-auto my-12 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent"></div>
+  <!-- Animated shapes background -->
+  <div id="testimonial-bg" class="absolute inset-0 z-0"></div>
+
+  <div class="relative z-10">
+    <h2 class="text-3xl text-center orbitron mb-10 highlight">Testimonials</h2>
+
+    <div class="relative max-w-5xl mx-auto overflow-hidden">
+      <!-- Track -->
+      <div id="testimonial-track" class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory">
+
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/jaynaksha.jpg" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Jaynaksha Vyas</h3>
+          <p class="text-sm italic mb-4 text-gray-400"> Captain 2024-2025 , Vice-Captain 2023-2024 </p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">Team Phoenix is a thrilling platform for innovation and hands-on learning, building technical skills and inspiring out of the box thinking to create impactful solutions. More than a team, it’s a collective of passionate individuals who face challenges, adapt, and make the best of every resource. One day, Team Phoenix will be the epicenter of innovation and technology the world will admire.</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/shivank.jpg" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Shivank Goyal</h3>
+          <p class="text-sm italic mb-4 text-gray-400">Team Member 2024-2025</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">Being part of the robotics team has been one of the best experiences of my college life. From late night builds to the thrill of Robocon and IROC, it’s been a journey filled with learning, teamwork, and some serious fun. Grateful to have shared it with my amazing juniors. You guys made it even better. These memories and skills will stick with me for life.</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/archit.jpg" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Archit Anand</h3>
+          <p class="text-sm italic mb-4 text-gray-400">Alumni and Team Captain 2021-2022</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">Traversing the peaks and valleys of this glorious journey, we went through it all together. From its dormancy during challenging times to its emergence fully rejuvenated, our team kept the lore of the phoenix alive!</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+        <!-- Testimonial 4 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/akshat.jpg" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Akshat Jain</h3>
+          <p class="text-sm italic mb-4 text-gray-400">Alumni and Team Captain 2020-2021</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">We can draw a lot of motivation and inspiration from our team because just like the Pheonix, they have come out more stronger and ambitious than before.</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+        <!-- Testimonial 5 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/pratham.jpg" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Pratham Chaudhary</h3>
+          <p class="text-sm italic mb-4 text-gray-400">Team Captain 2022-2023</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">Being part of Team Phoenix has truly been the most amazing memories of my college journey so far. It has been an incredible experience where I had the privilege of learning and collaborating with passionate individuals who share the same 'hunger' to tinker. Witnessing the team uphold the legacy and elevate it to new heights is truly gratifying. This journey taught me a precious lesson: "Failure is never truly an option if the yardstick of your success is the knowledge you gain."</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+        <!-- Testimonial 6 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/piyush.1.jpg" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Piyush Tewari</h3>
+          <p class="text-sm italic mb-4 text-gray-400">Vice-Captain 2023-2024</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">Success is an easy path if interest is your driver.</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+        <!-- Testimonial 7 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/Dewansh.jpg" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Devansh Choudhary</h3>
+          <p class="text-sm italic mb-4 text-gray-400">Alumni and Vice-Captain 2021-2022</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">Being a part of Robocon club has been an exhilarating adventure, filled with unforgettable moments of collaboration, learning, and growth. From building robots to competing on grand stages, we've embraced challenges and celebrated victories together. This club is more than just a team; it's a family united by the love for robotics. I'm proud to call myself a Phoenix, soaring higher with every endeavor.</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+        <!-- Testimonial 8 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/panav.jpg" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Panav Arpit Raaj</h3>
+          <p class="text-sm italic mb-4 text-gray-400">Team Captain 2023-2024</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">This team thrives on competition, distinct from clubs driven by interest or hobbies. ABU Robocon boasts fierce competition where deadlines could equate to elimination. Striving for excellence is essential, as we must surpass the efforts of numerous competing teams across Asia.</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+        <!-- Testimonial 9 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/rohit-gupta.jpeg" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Rohit Gupta</h3>
+          <p class="text-sm italic mb-4 text-gray-400">Alumni and Team Captain 2017-2018</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">CTO and Co-Founder of RangeAero, an aviation-logistics based startup operating from Bangalore.</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+        <!-- Testimonial 10 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/dhawal.png" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Dhawal Gupta</h3>
+          <p class="text-sm italic mb-4 text-gray-400">Technical Secretary, Gymkhana; Founding member and Vice-Captain Robocon; Founder and Co-ordinator Tinkering Lab; IITP CSE 2015-2019</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">The initial absence of a Robocon team at IIT Patna began as a source of frustration but quickly turned into an unexpected opportunity to start something truly special. Participating in Robocon was not just about fulfilling my passion for working on robotics and tackling intriguing problems; it was the first time I had the chance to collaborate closely with friends across all five departments. This endeavor was incredibly fulfilling, fostering lasting friendships, innovative ideas, and meaningful collaboration. I am proud and delighted to have seen the team expand from 18 to over 50 students. I wish them the best of luck for the future. This experience is one I cherish deeply, as it contributed significantly to my personal and professional growth.</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+        <!-- Testimonial 11 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/nikhil.jpg" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Nikhil Singh</h3>
+          <p class="text-sm italic mb-4 text-gray-400">Team Member 2022-2024</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">The competition not only challenged my technical skills but also fostered teamwork, creativity, and problem-solving. Building and programming a robot from scratch was both rewarding and educational.</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+        <!-- Testimonial 12 -->
+        <div class="testimonial-card flex-none w-3/4 mx-2 p-6 snap-center bg-white dark:bg-gray-800 rounded-xl shadow-lg transform scale-90 opacity-70 text-center">
+          <img src="img/rishav.jpg" class="w-24 h-24 rounded-full shadow-lg mx-auto mb-4" alt="Profile">
+          <h3 class="text-xl font-bold">Rishav Mitra</h3>
+          <p class="text-sm italic mb-4 text-gray-400">Team Member 2022-2024</p>
+          <p class="text-gray-700 dark:text-gray-300">
+            <span class="testimonial-text">Joining Team Phoenix, the RoboCon team of IIT Patna, offers endless opportunities and serves as a perfect platform for showcasing existing skills and developing new ones. Personally, I credit more than half of my current Techstack to my time with Robocon - IIT Patna! Undoubtedly, it's the most vibrant association of brilliant minds on our campus.</span>
+            <span class="see-more-btn">See more</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+        <!-- Add more testimonials here -->
+      </div>
+
+      <!-- Navigation -->
+       <!-- Progress bar above testimonial dots -->
+<div id="testimonial-progress" class="h-1 bg-orange-500 rounded-full transition-all duration-300"></div>
+
+
+      <!-- Navigation buttons & dots -->
+<div class="flex justify-center items-center mt-4 mb-10  space-x-3">
+  <button id="testimonial-prev" class="bg-orange-500 text-white px-3 py-1 rounded-full shadow">❮</button>
+  <div id="testimonial-dots" class="flex space-x-2">
+    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+     <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+     <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+     <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+    <span class="dot w-3 h-3 rounded-full bg-gray-400 dark:bg-gray-600"></span>
+  </div>
+  <button id="testimonial-next" class="bg-orange-500 text-white px-3 py-1 rounded-full shadow">❯</button>
+</div>
+    </div>
+  </section>
+
+  <script>
+    
+   
+    document.getElementById('prev').addEventListener('click', () => {
+      index--;
+      updateSlide();
+    });
+
+    // Auto-slide every 5s
+    setInterval(() => {
+      index++;
+      updateSlide();
+    }, 5000);
+
+    // Touch swipe support
+    track.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+    });
+    track.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      let moveX = e.touches[0].clientX - startX;
+      track.style.transform = `translateX(${-index * cardWidth + moveX}px)`;
+    });
+    track.addEventListener('touchend', (e) => {
+      isDragging = false;
+      let endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) index++;
+      if (endX - startX > 50) index--;
+      updateSlide();
+    });
+
+    // Initial state
+    updateSlide();
+  </script>
+
+
+
+
+
+ <!-- 🌟 FOOTER -->
+<footer class="bg-black text-white px-6 pt-10 pb-6 relative border-t border-orange-500 shadow-inner z-50">
+  <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-3 text-center md:text-left">
+
+    <!-- 👑 Logo + About -->
+    <div>
+      <div class="flex items-center justify-center md:justify-start mb-2">
+        <img src="image1-removebg-preview.png" alt="Phoenix Logo" class="h-10 w-10 mr-2">
+        <span class="orbitron text-lg font-bold">Team Phoenix<span class="text-orange-500">.</span></span>
+      </div>
+      <p class="text-sm text-gray-400">Official Robotics Team of IIT Patna.</p>
+    </div>
+
+    <!-- 📂 Quick Links -->
+    <div>
+      <h3 class="text-orange-500 font-semibold text-lg mb-2">Quick Links</h3>
+      <ul class="space-y-1 text-sm text-gray-300">
+        <li><a href="index.html" class="hover:text-orange-400"> Home</a></li>
+        <li><a href="team.html" class="hover:text-orange-400"> Team</a></li>
+        <li><a href="gallery.html" class="hover:text-orange-400">Gallery</a></li>
+        <li><a href="resource.html" class="hover:text-orange-400">Resources</a></li>
+        <li><a href="contact.html" class="hover:text-orange-400"> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- 📬 Contact & Social -->
+   <!-- 📬 Contact & Social (Updated with Logos & Links) -->
+<div>
+  <h3 class="text-orange-500 font-semibold text-lg mb-2">Contact</h3>
+  
+  <div class="space-y-2 text-sm text-gray-300">
+    <p class="flex items-center justify-center md:justify-start gap-2">
+      <i class="fas fa-envelope text-yellow-400 text-lg"></i>
+     
+    </p>
+    
+    <p class="flex items-center justify-center md:justify-start gap-2">
+      <i class="fas fa-map-marker-alt text-green-400 text-lg"></i>
+      <span>IIT Patna, India</span>
+    </p>
+  </div>
+
+  <div class="flex justify-center md:justify-start mt-4 space-x-5 text-xl">
+    <a href="https://instagram.com/teamphoenix.iitp" target="_blank" title="Instagram" class="hover:scale-110 transition-transform">
+      <img src="https://img.icons8.com/fluency/30/instagram-new.png" alt="Instagram" />
+    </a>
+    <a href="https://linkedin.com/company/teamphoenixiitp" target="_blank" title="LinkedIn" class="hover:scale-110 transition-transform">
+      <img src="https://img.icons8.com/fluency/30/linkedin.png" alt="LinkedIn" />
+    </a>
+    <a href="mailto:teamphoenix@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
+      <img src="https://img.icons8.com/fluency/30/new-post.png" alt="Email" />
+    </a>
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- 🔚 Bottom Note -->
+  <div class="text-center text-xs text-gray-500 mt-8 border-t border-gray-700 pt-4">
+    &copy; 2025 Team Phoenix – IIT Patna.
+  </div>
+
+ 
+ 
+
+  <!-- FontAwesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</footer>
+
+  <!-- Scripts -->
+  <script>
+    AOS.init();
+
+    window.onload = () => {
+     
+      // ✅ Hero image slider logic
+      const heroImages = document.querySelectorAll("#slider img");
+      let heroIndex = 0;
+
+      setInterval(() => {
+        heroImages[heroIndex].classList.remove("opacity-100");
+        heroImages[heroIndex].classList.add("opacity-0");
+
+        heroIndex = (heroIndex + 1) % heroImages.length;
+
+        heroImages[heroIndex].classList.remove("opacity-0");
+        heroImages[heroIndex].classList.add("opacity-100");
+      }, 4000); // change image every 4 seconds
+
+      // ✅ Testimonial slider logic
+      const slides = document.querySelectorAll('#testimonial-slider .slide');
+      let current = 0;
+      slides[current].classList.add('opacity-100');
+
+      setInterval(() => {
+        slides[current].classList.remove('opacity-100');
+        slides[current].classList.add('opacity-0');
+        current = (current + 1) % slides.length;
+        slides[current].classList.remove('opacity-0');
+        slides[current].classList.add('opacity-100');
+      }, 5000);
+    };
+
+    function toggleTheme() {
+      document.body.classList.toggle("dark");
+      localStorage.theme = document.body.classList.contains("dark") ? "dark" : "light";
+    }
+
+    if (localStorage.theme === 'dark') {
+      document.body.classList.add("dark");
+    }
+
+
+  </script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#f97316" },  // orange color
+        "shape": {
+          "type": "circle",
+          "stroke": { "width": 0, "color": "#000" },
+          "polygon": { "nb_sides": 6 }
+        },
+        "opacity": { "value": 1, "random": false },
+        "size": { "value": 5, "random": true },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#f97316",
+          "opacity": 0.6,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "bounce",
+          "bounce": true
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "repulse" },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 200,
+            "line_linked": { "opacity": 0.5 }
+          },
+          "repulse": {
+            "distance": 100,
+            "duration": 0.4
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+
+  <script>
+  // 🛠️ ABOUT SLIDER FIX
+  let aboutSlides = document.querySelectorAll(".about-slide");
+  let aboutIndex = 0;
+
+  function showAboutSlide(index) {
+    aboutSlides.forEach((slide, i) => {
+      if (i === index) {
+        slide.classList.remove("opacity-0");
+        slide.classList.add("opacity-100");
+      } else {
+        slide.classList.remove("opacity-100");
+        slide.classList.add("opacity-0");
+      }
+    });
+  }
+
+  function nextAboutSlide() {
+    aboutIndex = (aboutIndex + 1) % aboutSlides.length;
+    showAboutSlide(aboutIndex);
+  }
+
+  function prevAboutSlide() {
+    aboutIndex = (aboutIndex - 1 + aboutSlides.length) % aboutSlides.length;
+    showAboutSlide(aboutIndex);
+  }
+
+  // ✅ Show first image initially
+  window.addEventListener("load", () => {
+    showAboutSlide(0);
+  });
+
+  // ✅ Auto-slide every 5 seconds
+  setInterval(nextAboutSlide, 5000);
+</script>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('show');
+    }
+    function toggleMenuIcon() {
+      toggleMenu();
+      document.getElementById('burger-lines').classList.toggle('burger-active');
+    }
+  </script>
+
+  <script>
+    // ✅ Close menu when clicking a link
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('mobileMenu').style.display = "none";
+        document.getElementById('mobileMenu').classList.remove('show');
+        document.getElementById('burger-lines').classList.remove('burger-active');
+      });
+    });
+
+    // ✅ Close menu when clicking outside
+    document.addEventListener('click', (event) => {
+      const menu = document.getElementById('mobileMenu');
+      const burger = document.getElementById('burger');
+      if (menu.classList.contains('show') && !menu.contains(event.target) && !burger.contains(event.target)) {
+        menu.style.display = "none";
+        menu.classList.remove('show');
+        document.getElementById('burger-lines').classList.remove('burger-active');
+      }
+    });
+  </script>
+  <script>
+    
+  
+    document.getElementById('contest-prev').addEventListener('click', () => {
+      contestIndex--;
+      updateContestSlide();
+    });
+
+    // Optional: click on dots to navigate
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => {
+        contestIndex = i;
+        updateContestSlide();
+      });
+    });
+
+    // Auto-slide every 6s
+    setInterval(() => {
+      contestIndex++;
+      updateContestSlide();
+    }, 6000);
+
+    // Initialize
+    updateContestSlide();
+  </script>
+<script>
+  window.addEventListener('load', () => {
+    // Show image first
+    const img = document.getElementById('hero-img');
+    img.classList.remove('opacity-0');
+
+    // Then show "Team Phoenix" shortly after
+    setTimeout(() => {
+      const heading = document.getElementById('hero-heading');
+      heading.classList.remove('opacity-0');
+    }, 200);  // reduced delay
+
+    // Then type out subtitle
+    const subText = "Engineering | Innovation | Teamwork | Robotics";
+    const subElement = document.getElementById('hero-subheading');
+    const words = subText.split(" ");
+    let i = 0;
+
+    setTimeout(() => {
+      const interval = setInterval(() => {
+        if (i < words.length) {
+          subElement.innerHTML += words[i] + " ";
+          subElement.classList.remove('opacity-0');
+          i++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 100); // slightly faster word reveal
+    }, 1000); // starts earlier now
+  });
+</script>
+
+<script>
+
+  const aboutObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // ✅ Animate About Section elements
+        document.getElementById('about-image').classList.remove('opacity-0');
+        setTimeout(() => {
+          document.getElementById('about-heading').classList.remove('opacity-0');
+        }, 300);
+        setTimeout(() => {
+          document.getElementById('about-para').classList.remove('opacity-0');
+        }, 600);
+
+        // ✅ Only run once
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  // 🔁 Start observing the section
+  aboutObserver.observe(document.getElementById('about-image'));
+
+
+</script>
+
+<script>
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Reveal all About elements
+        document.getElementById('about-image').classList.remove('opacity-0');
+        setTimeout(() => {
+          document.getElementById('about-heading').classList.remove('opacity-0');
+        }, 300);
+        setTimeout(() => {
+          document.getElementById('about-para').classList.remove('opacity-0');
+        }, 600);
+
+        // Only trigger once
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+
+  // Observe the entire About section (or just the image)
+  observer.observe(document.getElementById('about-image'));
+
+const whatCards = document.querySelectorAll('.what-card');
+const whatSection = document.getElementById('what-we-do');
+
+// Function to reveal the cards
+function revealWhatCards() {
+  whatCards.forEach((card, index) => {
+    setTimeout(() => {
+      card.classList.remove('opacity-0');
+    }, index * 200); // stagger delay
+  });
+}
+
+// IntersectionObserver setup
+const whatObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      revealWhatCards();
+      observer.unobserve(entry.target); // only run once
+    }
+  });
+}, { threshold: 0 }); // trigger as soon as section appears
+
+// Start observing
+whatObserver.observe(whatSection);
+
+// ✅ Fallback: If already in viewport on load (mobile fast load issue)
+window.addEventListener('load', () => {
+  const rect = whatSection.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    revealWhatCards();
+  }
+});
+
+
+
+
+</script>
+
+
+
+<script>
+function initSlider(trackId, dotContainerId, prevBtnId, nextBtnId) {
+  const track = document.getElementById(trackId);
+  const slides = track.querySelectorAll('.flex-none');
+  const dots = document.querySelectorAll(`#${dotContainerId} .dot`);
+  const nextBtn = document.getElementById(nextBtnId);
+  const prevBtn = document.getElementById(prevBtnId);
+  let index = 0;
+
+  function updateDots(activeIndex) {
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('bg-orange-500', i === activeIndex);
+      dot.classList.toggle('bg-gray-400', i !== activeIndex);
+      dot.classList.toggle('dark:bg-gray-600', i !== activeIndex);
+    });
+  }
+
+  function scrollToSlide(i) {
+    if (i >= slides.length) i = 0;
+    if (i < 0) i = slides.length - 1;
+    track.scrollTo({ left: slides[i].offsetLeft, behavior: 'smooth' });
+    updateDots(i);
+    index = i;
+  }
+
+  // Click events
+  nextBtn?.addEventListener('click', () => scrollToSlide(index + 1));
+  prevBtn?.addEventListener('click', () => scrollToSlide(index - 1));
+  dots.forEach((dot, i) => dot.addEventListener('click', () => scrollToSlide(i)));
+
+  // Auto slide
+  setInterval(() => {
+    const rect = track.getBoundingClientRect();
+    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+      scrollToSlide(index + 1);
+    }
+  }, 6000);
+
+  // Manual scroll detection (stable)
+  track.addEventListener('scroll', () => {
+    let closestIndex = Math.round(track.scrollLeft / slides[0].offsetWidth);
+    if (closestIndex < 0) closestIndex = 0;
+    if (closestIndex >= slides.length) closestIndex = slides.length - 1;
+    updateDots(closestIndex);
+    index = closestIndex;
+  });
+
+  // Initialize dots
+  updateDots(0);
+}
+
+// ✅ Init for both sliders
+initSlider('testimonial-track', 'testimonial-dots', 'testimonial-prev', 'testimonial-next');
+
+initSlider('contest-track', 'contest-dots', 'contest-prev', 'contest-next');
+
+</script>
+
+<script>
+  const testimonialTrack = document.getElementById('testimonial-track');
+  const testimonialSlides = testimonialTrack.querySelectorAll('.flex-none');
+  const testimonialDots = document.querySelectorAll('#testimonial-dots .dot');
+  const testimonialNext = document.getElementById('testimonial-next');
+  const testimonialPrev = document.getElementById('testimonial-prev');
+
+  // Progress bar element (make sure this div exists above your testimonial dots in HTML)
+  const testimonialProgress = document.getElementById('testimonial-progress');
+
+  let testimonialIndex = 0;
+
+  function scrollToTestimonial(index) {
+    if (index >= testimonialSlides.length) index = 0;
+    if (index < 0) index = testimonialSlides.length - 1;
+
+    testimonialTrack.scrollTo({
+      left: testimonialSlides[index].offsetLeft,
+      behavior: 'smooth'
+    });
+
+    updateDots(index);
+    updateProgress(index);
+    testimonialIndex = index;
+  }
+
+  function updateDots(activeIndex) {
+    testimonialDots.forEach((dot, i) => {
+      dot.classList.toggle('bg-orange-500', i === activeIndex);
+      dot.classList.toggle('bg-gray-400', i !== activeIndex);
+      dot.classList.toggle('dark:bg-gray-600', i !== activeIndex);
+    });
+  }
+
+  function updateProgress(index) {
+    const total = testimonialSlides.length;
+    testimonialProgress.style.width = `${((index + 1) / total) * 100}%`;
+  }
+
+  // Arrow buttons
+  testimonialNext.addEventListener('click', () => scrollToTestimonial(testimonialIndex + 1));
+  testimonialPrev.addEventListener('click', () => scrollToTestimonial(testimonialIndex - 1));
+
+  // Dot clicks
+  testimonialDots.forEach((dot, i) => dot.addEventListener('click', () => scrollToTestimonial(i)));
+
+  // Auto-slide (desktop only, not on phones)
+let testimonialTimer = null;
+
+function startAutoplay() {
+  // run only if viewport is wider than 768px
+  if (window.innerWidth > 768) {
+    testimonialTimer = setInterval(() => {
+      const rect = testimonialTrack.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+      if (isVisible) {
+        scrollToTestimonial(testimonialIndex + 1);
+      }
+    }, 9000);
+  }
+}
+
+function stopAutoplay() {
+  if (testimonialTimer) {
+    clearInterval(testimonialTimer);
+    testimonialTimer = null;
+  }
+}
+
+// Start autoplay on load if desktop
+startAutoplay();
+
+// Stop/start autoplay on resize (in case user rotates phone / resizes window)
+window.addEventListener('resize', () => {
+  stopAutoplay();
+  startAutoplay();
+});
+
+// Stop autoplay if user interacts
+['touchstart', 'pointerdown', 'mousedown', 'wheel', 'keydown'].forEach(evt => {
+  testimonialTrack.addEventListener(evt, stopAutoplay, { passive: true });
+});
+
+
+  // Manual scroll detection for dots
+  testimonialTrack.addEventListener('scroll', () => {
+    let closestIndex = 0;
+    let closestDistance = Infinity;
+
+    testimonialSlides.forEach((slide, i) => {
+      const distance = Math.abs(slide.offsetLeft - testimonialTrack.scrollLeft);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = i;
+      }
+    });
+
+    updateDots(closestIndex);
+    updateProgress(closestIndex);
+    testimonialIndex = closestIndex;
+  });
+
+  // Initialize
+  updateDots(0);
+  updateProgress(0);
+  testimonialSlides.forEach((slide, i) => {
+  slide.classList.toggle('active', i === activeIndex);
+});
+
+</script>
+
+
+
+<script>
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('active');
+    mobileMenu.classList.toggle('show');
+  });
+
+  // Close menu on link click
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('active');
+      mobileMenu.classList.remove('show');
+    });
+  });
+
+document.querySelectorAll('.see-more-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const text = btn.previousElementSibling;
+    text.classList.toggle('expanded');
+    btn.textContent = text.classList.contains('expanded') ? 'See less' : 'See more';
+  });
+});
+// ✅ Flip-card animation trigger (scroll reveal)
+const flipCards = document.querySelectorAll('.flip-card');
+
+const flipObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry, index) => {
+    if (entry.isIntersecting) {
+      // stagger animation by index
+      setTimeout(() => {
+        entry.target.classList.add('animate');
+      }, index * 200);
+
+      observer.unobserve(entry.target); // run once per card
+    }
+  });
+}, { threshold: 0.2 }); // trigger when 20% visible
+
+flipCards.forEach(card => flipObserver.observe(card));
+
+
+// ✅ Flip cards on tap for mobile (with auto-close others + tap outside)
+flipCards.forEach(card => {
+  card.addEventListener('click', (e) => {
+    if (window.innerWidth <= 768) {
+      e.stopPropagation(); // prevent triggering document click
+
+      // Close any other flipped cards
+      flipCards.forEach(c => {
+        if (c !== card) {
+          c.classList.remove('flipped');
+        }
+      });
+
+      // Toggle the clicked one
+      card.classList.toggle('flipped');
+    }
+  });
+});
+
+// ✅ Close all cards when tapping outside
+document.addEventListener('click', () => {
+  if (window.innerWidth <= 768) {
+    flipCards.forEach(card => card.classList.remove('flipped'));
+  }
+});
+
+</script>
+
+</body>
+
+</html>

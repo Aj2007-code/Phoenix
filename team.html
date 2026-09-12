@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCMJ34W220"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PCMJ34W220');
+</script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Team - Team Phoenix</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+  <!-- Tailwind (for utility classes) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Particles -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Lottie -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <style>
+    /* Page basics */
+    html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+    body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg,#000 0%,#0b0e17 50%,#000 100%);
+    color: white;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .iit-center-text, nav a, #hero-subheading, .contact-header-box p {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  p, a, input, select, textarea, button {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+ /* Navbar */
+nav {
+  background: black;
+  height: 56px;
+}
+nav .logo img {
+  height: 35px;
+  width: 35px;
+  object-fit: contain;
+  margin-right: 8px;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+}
+nav a:hover::after,
+nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 100%;
+  background: orange;
+}
+
+/* Hide menu and IIT Patna on small screens */
+@media (max-width: 768px) {
+  nav .iit-center-text {
+    display: none;
+  }
+  nav ul {
+    display: none;
+  }
+}
+
+
+
+
+    /* Hero */
+    .black-orange-corners {
+      background:
+        radial-gradient(circle at top left, rgba(255,120,0,0.2), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255,94,0,0.18), transparent 30%),
+        #000;
+      position:absolute; inset:0; z-index:-1; background-repeat:no-repeat; background-size:cover;
+    }
+    #home { position:relative; height:80vh; display:grid; align-items:center; padding: top 56px; overflow:hidden; }
+
+    /* Contact section */
+    .contact-section { position:relative; padding:60px 20px 100px; z-index:1; background:transparent; }
+    .container { max-width:1100px; margin:0 auto; position:relative; }
+  /* decorative gradient bg */
+    .gradient-bg {
+      position:absolute; inset:0; width:100%; height:100%; left:-25%; top:-25%;
+      background: radial-gradient(circle at center,#ff4500 0%, #0a0a0a 70%);
+      opacity:0.12; transform:rotate(25deg); z-index:0;
+    }
+
+    /* Header boxes (stacked) */
+    .contact-header-box {
+      background:#111; border-radius:12px; padding:22px; box-shadow:0 6px 20px rgba(0,0,0,0.6);
+    }
+
+    /* Columns - use grid so both columns stay on same row on wide screens */
+    .columns {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:32px;
+      margin-top:14px;
+    }
+
+    /* Ensure columns don't force wrapping */
+    .contact-info, .contact-form {
+      background:#0f0f0f; padding:26px; border-radius:12px;
+      min-height:260px; /* can adjust if you want */
+    }
+
+    .contact-info h3 { color:#ff6d1a; margin:0 0 10px; font-size:1.1rem; }
+    .contact-info p, .contact-info a { color:#ddd; line-height:1.5; }
+    .contact-info a { color:#ff6d1a; text-decoration:none; }
+
+    /* Form fields */
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width:100%; padding:12px 14px; margin-bottom:14px; background:#151515; border:1px solid #222; color:#fff; border-radius:8px;
+      font-size:1rem;
+    }
+    .contact-form button {
+      width:100%; padding:12px 14px; background:#ff6d1a; color:#fff; border:none; border-radius:8px; font-weight:700; cursor:pointer;
+    }
+
+    /* Lottie and map */
+    .lottie-icons { display:flex; gap:12px; margin-top:10px; }
+    .map { width:100%; height:180px; border:2px solid #222; border-radius:8px; margin-top:12px; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .columns { grid-template-columns: 1fr; }
+      #home { height:70vh; }
+      .contact-header-box { padding:18px; }
+    }
+    .team-carousel {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 10px 0;
+      gap: 1rem;
+    }
+
+  /* Flip card container */
+.team-card {
+  width: 220px;
+  height: 320px;
+  perspective: 1000px; /* Enable 3D flip */
+}
+
+.team-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.team-card:hover .team-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back */
+.team-front, .team-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111;
+  border: 2px solid #f97316;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Front side (photo + name) */
+.team-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.team-front h3 {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 8px;
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+/* Back side (info + socials) */
+.team-back {
+  transform: rotateY(180deg);
+  padding: 16px;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto; /* ✅ allow clicking */
+  z-index: 2;
+}
+
+.team-front {
+  pointer-events: auto; /* clickable front side if needed */
+}
+
+.team-back h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.team-back p {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #f97316;
+  font-size: 1.5rem;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+  color: #ffae42;
+}
+
+/* Year tabs */
+.team-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.team-tab-btn {
+  padding: 10px 28px;
+  border-radius: 9999px;
+  border: 2px solid #f97316;
+  background: transparent;
+  color: #f97316;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.team-tab-btn:hover {
+  background: rgba(249,115,22,0.15);
+}
+
+.team-tab-btn.active {
+  background: #f97316;
+  color: #000;
+  box-shadow: 0 0 18px rgba(249,115,22,0.6);
+}
+
+.team-year-section {
+  animation: fadeInTeam 0.5s ease;
+}
+
+@keyframes fadeInTeam {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Fallback for a 2026 photo that hasn't been uploaded yet (broken img src) */
+.team-front .img-fallback-icon {
+  display: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: #f97316;
+  opacity: 0.4;
+  background: linear-gradient(135deg,#1a1a1a,#0a0a0a);
+  z-index: 1;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black flex items-center justify-between px-4 py-2">
+  <!-- Logo -->
+  <div class="flex items-center gap-2">
+    <img src="image1-removebg-preview.png" alt="logo" class="h-9 w-9 object-contain">
+    <span class="font-bold text-white">Team Phoenix<span class="text-orange-500">.</span></span>
+  </div>
+
+  <!-- IIT Patna text (hidden on small screens) -->
+  <div class="hidden md:block font-semibold text-white">IIT Patna</div>
+
+  <!-- Burger Icon -->
+  <button id="burger" class="flex flex-col justify-between w-6 h-5 md:hidden">
+    <span class="block w-full h-[3px] bg-white"></span>
+    <span class="block w-full h-[3px] bg-white"></span>
+    <span class="block w-full h-[3px] bg-white"></span>
+  </button>
+
+  <!-- Menu -->
+  <ul id="menu" class="fixed top-0 right-[-100%] h-full w-[80%] bg-black flex flex-col items-start pt-6 gap-6 pl-6 transition-all duration-300 z-50 md:static md:flex-row md:gap-6 md:w-auto md:h-auto md:pt-0 md:pl-0 md:right-0">
+    <!-- Close Button -->
+    <button id="close-menu" class="text-white text-2xl absolute top-4 right-4 hover:text-orange-400 md:hidden">&times;</button>
+    <li><a href="index.html" class="text-white font-semibold hover:text-orange-400">Home</a></li>
+    <li><a href="team.html" class="text-white font-semibold hover:text-orange-400 active">Team</a></li>
+    <li><a href="gallery.html" class="text-white font-semibold hover:text-orange-400">Gallery</a></li>
+    <li><a href="resource.html" class="text-white font-semibold hover:text-orange-400">Resources</a></li>
+    <li><a href="contact.html" class="text-white font-semibold hover:text-orange-400">Contact</a></li>
+    <li><a href="Conspectus_Phoenix.pdf" class="text-white font-semibold hover:text-orange-400">Collaborate</a></li>
+  </ul>
+</nav>
+
+<!-- Overlay -->
+<div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+
+
+
+
+ <!-- HERO -->
+<section id="home" style="position:relative; height:50vh; display:flex; align-items:center; justify-content:center; padding-top:64px; overflow:hidden;">
+  <div class="black-orange-corners"></div>
+  <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+  <div style="z-index:2; width:100%; max-width:900px; text-align:center; padding:0 20px;">
+    <h1 class="orbitron" style="font-size:4rem; color:#ff8a3d; margin-bottom:12px;">
+      Our Team
+    </h1>
+    <p id="hero-subheading" class="poppins" style="font-size:1.2rem; color:#c7c7c7; max-width:650px; margin:0 auto;">
+      Meet the passionate innovators and engineers behind Team Phoenix.
+    </p>
+  </div>
+</section>
+
+ <!-- 👥 Team Section -->
+    
+<section id="team" class="contact-section relative overflow-visible">
+  <div class="gradient-bg"></div>
+  <div class="relative z-10">
+
+    <div class="container">
+    <h2 class="text-3xl text-center orbitron mb-6 highlight">- Meet Our Team -</h2>
+
+    <div class="team-tabs">
+      <button type="button" id="tab-2025" class="team-tab-btn active" onclick="showTeamYear('2025')">Team 2025</button>
+      <button type="button" id="tab-2026" class="team-tab-btn" onclick="showTeamYear('2026')">Team 2026</button>
+    </div>
+
+    <!-- ===== TEAM 2025 ===== -->
+    <div id="team-2025" class="team-year-section">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto justify-items-center">
+
+<div class="team-card">
+  <div class="team-inner">
+    <!-- Front -->
+    <div class="team-front">
+      <img src="img/jaynaksha.jpg" alt="Jaynaksha" />
+      <h3>Jaynaksha</h3>
+    </div>
+
+    <!-- Back -->
+    <div class="team-back">
+      <h3>Jaynaksha</h3>
+      <p>Team Captain</p>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/jayinaksha-vyas-974051283/" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Shivank -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/shivank.jpg" alt="Shivank" />
+        <h3>Shivank Goyal</h3>
+      </div>
+      <div class="team-back">
+        <h3>Shivank Goyal</h3>
+        <p>Core Member</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/shivankgoyal23/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ayush -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/ayush2.jpg" alt="Ayush" />
+        <h3>Ayush</h3>
+      </div>
+      <div class="team-back">
+        <h3>Ayush</h3>
+        <p>Core Member</p>
+        <div class="social-links">
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vidhan -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/shiv.jpg" alt="shiv" />
+        <h3>Shiv Kumar</h3>
+      </div>
+      <div class="team-back">
+        <h3>Shiv Kumar</h3>
+        <p>Core Member</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/shiv-kumar-6a8a00293?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/vidhan.jpg" alt="vidhan" />
+        <h3>Vidhan Bansal</h3>
+      </div>
+      <div class="team-back">
+        <h3>Vidhan Bansal</h3>
+        <p>Core Member</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/vidhan-bansal-9bb784290" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Anand -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/me.jpg" alt="Anand" />
+        <h3>Anand</h3>
+      </div>
+      <div class="team-back">
+        <h3>Anand</h3>
+        <p>Mechanical Lead</p>
+        <div class="social-links">
+          <a href="www.linkedin.com/in/anand-pdt" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Satyam -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/satyam.jpg" alt="Satyam" />
+        <h3>Satyam</h3>
+      </div>
+      <div class="team-back">
+        <h3>Satyam</h3>
+        <p>Register Level Programmer</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/satyam-singh-595bb6211?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aditya -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/aditya.jpg" alt="Aditya" />
+        <h3>Aditya</h3>
+      </div>
+      <div class="team-back">
+        <h3>Aditya</h3>
+        <p>PID Expert</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/aditya-raj-768137272?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Kanishk -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/kanishk.jpg" alt="Kanishk" />
+        <h3>Kanishk</h3>
+      </div>
+      <div class="team-back">
+        <h3>Kanishk</h3>
+        <p>Core Member</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/kanishk-desai-54a88031a" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Divya -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/divya.jpg" alt="Divya" />
+        <h3>Divya</h3>
+      </div>
+      <div class="team-back">
+        <h3>Divya</h3>
+        <p>Software</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/divya-swaroop-jaiswal/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aryan -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/aryan.jpg" alt="Aryan" />
+        <h3>Aryan</h3>
+      </div>
+      <div class="team-back">
+        <h3>Aryan</h3>
+        <p>CAD</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/aryan-jain-357129219" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ayush Maurya -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/ayush.jpg" alt="Ayush Maurya" />
+        <h3>Ayush Maurya</h3>
+      </div>
+      <div class="team-back">
+        <h3>Ayush Maurya</h3>
+        <p>Core Member</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/ayush-maurya-5a8308339?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Manish -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/manish.jpg" alt="Manish" />
+        <h3>Manish</h3>
+      </div>
+      <div class="team-back">
+        <h3>Manish</h3>
+        <p>SLAM Expert</p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/manish-kumar-45550a263" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Liza -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/liza.jpg" alt="Liza" />
+        <h3>Liza</h3>
+      </div>
+      <div class="team-back">
+        <h3>Liza</h3>
+        <p>Core Member</p>
+        <div class="social-links">
+          <a href="https://linkedin.com/in/liza" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Rudranshu -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/Rudranshu.jpg" alt="Rudranshu" />
+        <h3>Rudranshu</h3>
+      </div>
+      <div class="team-back">
+        <h3>Rudranshu</h3>
+        <p>Core Member</p>
+        <div class="social-links">
+          <a href=" https://in.linkedin.com/in/rudranshu-mishra-335441330 " target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Anany -->
+  <div class="team-card">
+    <div class="team-inner">
+      <div class="team-front">
+        <img src="img/ananya.jpg" alt="Anany" />
+        <h3>Anany</h3>
+      </div>
+      <div class="team-back">
+        <h3>Anany</h3>
+        <p>Core Member</p>
+        <div class="social-links">
+          <a href="www.linkedin.com/in/anany-raghav-964345329" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+    </div>
+    <!-- ===== END TEAM 2025 ===== -->
+
+    <!-- ===== TEAM 2026 ===== -->
+    <div id="team-2026" class="team-year-section hidden">
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto justify-items-center">
+
+      <!-- Team 2026 — 15 placeholder cards. Photos already exist: place each member's
+           photo at img/2026/member01.jpg ... img/2026/member15.jpg (or edit the src
+           below to match your actual filenames), then replace the name/role/link
+           placeholders. If a photo is missing, a fallback icon shows automatically. -->
+
+      <!-- Member 1 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member01.jpg" alt="Member 1" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 1</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 1</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member02.jpg" alt="Member 2" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 2</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 2</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member03.jpg" alt="Member 3" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 3</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 3</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 4 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member04.jpg" alt="Member 4" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 4</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 4</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 5 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member05.jpg" alt="Member 5" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 5</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 5</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 6 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member06.jpg" alt="Member 6" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 6</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 6</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 7 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member07.jpg" alt="Member 7" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 7</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 7</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 8 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member08.jpg" alt="Member 8" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 8</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 8</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 9 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member09.jpg" alt="Member 9" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 9</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 9</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 10 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member10.jpg" alt="Member 10" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 10</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 10</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 11 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member11.jpg" alt="Member 11" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 11</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 11</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 12 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member12.jpg" alt="Member 12" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 12</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 12</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 13 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member13.jpg" alt="Member 13" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 13</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 13</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 14 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member14.jpg" alt="Member 14" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 14</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 14</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Member 15 -->
+      <div class="team-card">
+        <div class="team-inner">
+          <div class="team-front">
+            <img src="img/2026/member15.jpg" alt="Member 15" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
+            <h3>Member 15</h3>
+          </div>
+          <div class="team-back">
+            <h3>Member 15</h3>
+            <p>Role TBD</p>
+            <div class="social-links">
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div>
+    <!-- ===== END TEAM 2026 ===== -->
+
+    </div>
+  </div>
+  </section>
+
+ <!-- 🌟 FOOTER -->
+<footer class="bg-black text-white px-6 pt-10 pb-6 relative border-t border-orange-500 shadow-inner z-50">
+  <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-3 text-center md:text-left">
+
+    <!-- 👑 Logo + About -->
+    <div>
+      <div class="flex items-center justify-center md:justify-start mb-2">
+        <img src="image1-removebg-preview.png" alt="Phoenix Logo" class="h-10 w-10 mr-2">
+        <span class="orbitron text-lg font-bold">Team Phoenix<span class="text-orange-500">.</span></span>
+      </div>
+      <p class="text-sm text-gray-400">Official Robotics Team of IIT Patna.</p>
+    </div>
+
+    <!-- 📂 Quick Links -->
+    <div>
+      <h3 class="text-orange-500 font-semibold text-lg mb-2">Quick Links</h3>
+      <ul class="space-y-1 text-sm text-gray-300">
+        <li><a href="index.html" class="hover:text-orange-400"> Home</a></li>
+        <li><a href="team.html" class="hover:text-orange-400"> Team</a></li>
+        <li><a href="gallery.html" class="hover:text-orange-400">Gallery</a></li>
+        <li><a href="resource.html" class="hover:text-orange-400">Resources</a></li>
+        <li><a href="contact.html" class="hover:text-orange-400"> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- 📬 Contact & Social -->
+   <!-- 📬 Contact & Social (Updated with Logos & Links) -->
+<div>
+  <h3 class="text-orange-500 font-semibold text-lg mb-2">Contact</h3>
+  
+  <div class="space-y-2 text-sm text-gray-300">
+    <p class="flex items-center justify-center md:justify-start gap-2">
+      <i class="fas fa-envelope text-yellow-400 text-lg"></i>
+     
+    </p>
+    
+    <p class="flex items-center justify-center md:justify-start gap-2">
+      <i class="fas fa-map-marker-alt text-green-400 text-lg"></i>
+      <span>IIT Patna, India</span>
+    </p>
+  </div>
+
+  <div class="flex justify-center md:justify-start mt-4 space-x-5 text-xl">
+    <a href="https://instagram.com/teamphoenix.iitp" target="_blank" title="Instagram" class="hover:scale-110 transition-transform">
+      <img src="https://img.icons8.com/fluency/30/instagram-new.png" alt="Instagram" />
+    </a>
+    <a href="https://linkedin.com/company/teamphoenixiitp" target="_blank" title="LinkedIn" class="hover:scale-110 transition-transform">
+      <img src="https://img.icons8.com/fluency/30/linkedin.png" alt="LinkedIn" />
+    </a>
+    <a href="mailto:teamphoenix@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
+      <img src="https://img.icons8.com/fluency/30/new-post.png" alt="Email" />
+    </a>
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- 🔚 Bottom Note -->
+  <div class="text-center text-xs text-gray-500 mt-8 border-t border-gray-700 pt-4">
+    &copy; 2025 Team Phoenix – IIT Patna.
+  </div>
+
+ 
+ 
+
+  <!-- FontAwesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</footer>
+
+ <script>
+    AOS.init();
+    window.onload = () => document.getElementById("preloader").style.display = "none";
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle("dark");
+      localStorage.theme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+    }
+    if (localStorage.theme === 'dark') document.documentElement.classList.add("dark");
+  </script>
+  <script>
+ particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#f97316" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 1 },
+        "size": { "value": 5, "random": true },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#f97316",
+          "opacity": 0.6,
+          "width": 1
+        },
+        "move": { "enable": true, "speed": 2 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "grab" },
+          "onclick": { "enable": true, "mode": "repulse" },
+          "resize": true
+        }
+      },
+      "retina_detect": true
+    });
+ window.addEventListener('load', () => {
+      document.getElementById('hero-img').classList.remove('opacity-0');
+      setTimeout(() => {
+        document.getElementById('hero-heading').classList.remove('opacity-0');
+      }, 200);
+      const words = "Engineering | Innovation | Teamwork | Robotics".split(" ");
+      const sub = document.getElementById('hero-subheading');
+      let i = 0;
+      setTimeout(() => {
+        const interval = setInterval(() => {
+          if (i < words.length) {
+            sub.innerHTML += words[i] + " ";
+            sub.classList.remove('opacity-0');
+            i++;
+          } else clearInterval(interval);
+        }, 100);
+      }, 1000);
+    });
+
+    
+  // NOTE: the team section currently uses a CSS grid layout, not a scrolling
+  // carousel, so this element doesn't exist on the page. Guarded with a null
+  // check so it simply does nothing instead of throwing a console error.
+  const teamCarousel = document.querySelector('.team-carousel');
+
+  if (teamCarousel) {
+    const scrollStep = 220; // Width of one team card
+    const scrollDelay = 1000; // Auto-scroll interval
+
+    let scrollAmount = 0;
+    let autoScrollActive = true;
+    let autoScrollInterval;
+
+    function autoScroll() {
+      if (!autoScrollActive) return;
+
+      // Check if end reached
+      if (teamCarousel.scrollLeft + teamCarousel.clientWidth >= teamCarousel.scrollWidth - scrollStep) {
+        scrollAmount = 0;
+        teamCarousel.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        scrollAmount += scrollStep;
+        teamCarousel.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+      }
+    }
+
+    // Start auto-scroll
+    function startAutoScroll() {
+      autoScrollInterval = setInterval(autoScroll, scrollDelay);
+    }
+
+    // Stop auto-scroll
+    function stopAutoScroll() {
+      clearInterval(autoScrollInterval);
+    }
+
+    // Pause when user hovers
+    teamCarousel.addEventListener('mouseenter', () => {
+      autoScrollActive = false;
+      stopAutoScroll();
+    });
+
+    teamCarousel.addEventListener('mouseleave', () => {
+      autoScrollActive = true;
+      startAutoScroll();
+    });
+
+    // Pause on manual scroll (e.g., dragging, swiping)
+    let isScrolling;
+    teamCarousel.addEventListener('scroll', () => {
+      autoScrollActive = false;
+      stopAutoScroll();
+      clearTimeout(isScrolling);
+      isScrolling = setTimeout(() => {
+        autoScrollActive = true;
+        startAutoScroll();
+      }, 1000); // Resume after 3s of no manual scroll
+    });
+
+    // Start it initially
+    startAutoScroll();
+  }
+
+
+
+</script>
+<script>
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("menu-overlay");
+const closeMenuBtn = document.getElementById("close-menu");
+
+function openMenu() {
+  menu.style.right = "0px";
+  overlay.classList.remove("hidden");
+}
+
+function closeMenu() {
+  menu.style.right = "-100%";
+  overlay.classList.add("hidden");
+}
+
+burger.addEventListener("click", openMenu);
+overlay.addEventListener("click", closeMenu);
+closeMenuBtn.addEventListener("click", closeMenu);
+</script>
+
+<!-- Team year tab switcher -->
+<script>
+function showTeamYear(year) {
+  const sections = { "2025": document.getElementById("team-2025"), "2026": document.getElementById("team-2026") };
+  const tabs = { "2025": document.getElementById("tab-2025"), "2026": document.getElementById("tab-2026") };
+
+  Object.keys(sections).forEach((key) => {
+    if (!sections[key] || !tabs[key]) return;
+    if (key === year) {
+      sections[key].classList.remove("hidden");
+      tabs[key].classList.add("active");
+    } else {
+      sections[key].classList.add("hidden");
+      tabs[key].classList.remove("active");
+    }
+  });
+}
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us | Team Phoenix</title>
+  <link rel="icon" type="image/png" href="img/11111.png">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (for utility classes) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Particles -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Lottie (kept only one to avoid 403 errors) -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <style>
+    /* Page basics */
+    html, body { max-width: 100%; overflow-x: hidden; }
+    img { max-width: 100%; height: auto; }
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(120deg,#000 0%,#0b0e17 50%,#000 100%);
+      color: white;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    h1, h2, h3 { font-family: 'Orbitron', sans-serif; }
+    .iit-center-text, nav a, #hero-subheading, .contact-header-box p { font-family: 'Poppins', sans-serif; }
+    p, a, input, select, textarea, button { font-family: 'Montserrat', sans-serif; }
+
+    /* Navbar */
+    nav {
+      background: black;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    nav .logo { display:flex; align-items:center; font-weight:700; color:#fff; }
+    nav .logo img { height:35px; width:35px; object-fit:contain; margin-right:8px; }
+    nav .iit-center-text { flex:1; text-align:center; font-family:'Poppins'; font-weight:700; }
+    nav ul { display:flex; gap:22px; list-style:none; margin:0; padding:0; }
+    nav a { color:#fff; text-decoration:none; font-weight:600; position:relative; }
+    nav a:hover::after, nav a.active::after { content:""; position:absolute; left:0; bottom:-6px; height:2px; width:100%; background:orange; }
+
+    /* Hero */
+    .black-orange-corners {
+      background:
+        radial-gradient(circle at top left, rgba(255,120,0,0.2), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255,94,0,0.18), transparent 30%),
+        #000;
+      position:absolute; inset:0; z-index:-1; background-repeat:no-repeat; background-size:cover;
+    }
+    #home { position:relative; height:50vh; display:flex; align-items:center; justify-content:center; padding-top:64px; overflow:hidden; }
+
+    /* Contact section */
+    .contact-section { position:relative; padding:60px 20px 100px; z-index:1; background:transparent; }
+    .container { max-width:1100px; margin:0 auto; position:relative; }
+
+    /* decorative gradient bg */
+    .gradient-bg {
+      position:absolute; inset:0; width:100%; height:100%; left:-25%; top:-25%;
+      background: radial-gradient(circle at center,#ff4500 0%, #0a0a0a 70%);
+      opacity:0.12; transform:rotate(25deg); z-index:0;
+    }
+
+    /* Header boxes (stacked) */
+    .contact-header-box {
+      background:#111; border-radius:12px; padding:22px; box-shadow:0 6px 20px rgba(0,0,0,0.6);
+    }
+
+    /* Columns */
+    .columns {
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:32px;
+      margin-top:14px;
+    }
+
+    .contact-info, .contact-form {
+      background:#0f0f0f; padding:26px; border-radius:12px;
+      min-height:260px;
+    }
+
+    .contact-info h3 { color:#ff6d1a; margin:0 0 10px; font-size:1.1rem; }
+    .contact-info p, .contact-info a { color:#ddd; line-height:1.5; }
+    .contact-info a { color:#ff6d1a; text-decoration:none; }
+
+    /* Form fields */
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width:100%; padding:12px 14px; margin-bottom:14px; background:#151515; border:1px solid #222; color:#fff; border-radius:8px;
+      font-size:1rem;
+    }
+    .contact-form button {
+      width:100%; padding:12px 14px; background:#ff6d1a; color:#fff; border:none; border-radius:8px; font-weight:700; cursor:pointer;
+    }
+
+    /* Lottie and map */
+    .lottie-icons { display:flex; gap:12px; margin-top:10px; }
+    .map { width:100%; height:180px; border:2px solid #222; border-radius:8px; margin-top:12px; }
+
+    /* Status message */
+    #formStatus[hidden] { display:none; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .columns { grid-template-columns: 1fr; }
+      #home { height:60vh; }
+      .contact-header-box { padding:18px; }
+    }
+  </style>
+</head>
+<body>
+
+ <!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black flex items-center justify-between px-4 py-2">
+  <!-- Logo -->
+  <div class="flex items-center gap-2">
+    <img src="image1-removebg-preview.png" alt="logo" class="h-9 w-9 object-contain">
+    <span class="font-bold text-white">Team Phoenix<span class="text-orange-500">.</span></span>
+  </div>
+
+  <!-- IIT Patna text (hidden on small screens) -->
+  <div class="hidden md:block font-semibold text-white">IIT Patna</div>
+
+  <!-- Burger Icon -->
+  <button id="burger" class="flex flex-col justify-between w-6 h-5 md:hidden">
+    <span class="block w-full h-[3px] bg-white"></span>
+    <span class="block w-full h-[3px] bg-white"></span>
+    <span class="block w-full h-[3px] bg-white"></span>
+  </button>
+
+  <!-- Menu -->
+  <ul id="menu" class="fixed top-0 right-[-100%] h-full w-[80%] bg-black flex flex-col items-start pt-6 gap-6 pl-6 transition-all duration-300 z-50 md:static md:flex-row md:gap-6 md:w-auto md:h-auto md:pt-0 md:pl-0 md:right-0">
+    <!-- Close Button -->
+    <button id="close-menu" class="text-white text-2xl absolute top-4 right-4 hover:text-orange-400 md:hidden">&times;</button>
+    <li><a href="index.html" class="text-white font-semibold hover:text-orange-400">Home</a></li>
+    <li><a href="team.html" class="text-white font-semibold hover:text-orange-400 ">Team</a></li>
+    <li><a href="gallery.html" class="text-white font-semibold hover:text-orange-400">Gallery</a></li>
+    <li><a href="resource.html" class="text-white font-semibold hover:text-orange-400 ">Resources</a></li>
+    <li><a href="contact.html" class="text-white font-semibold hover:text-orange-400 active">Contact</a></li>
+   <li><a href="Conspectus_Phoenix.pdf" class="text-white font-semibold hover:text-orange-400 ">Collaborate</a></li>
+  </ul>
+</nav>
+
+<!-- Overlay -->
+<div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="black-orange-corners"></div>
+  <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+  <div style="z-index:2; width:100%; max-width:900px; text-align:center; padding:0 20px;">
+    <h1 class="orbitron" style="font-size:3rem; color:#ff8a3d; margin-bottom:12px;">Contact Us</h1>
+    <p id="hero-subheading" class="poppins" style="font-size:1.1rem; color:#c7c7c7; max-width:650px; margin:0 auto;">
+      We’d love to hear from you — drop us a message and we’ll get back as soon as possible.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section" style="position:relative; overflow:visible;">
+  <div class="gradient-bg"></div>
+  <div class="container">
+    <div class="columns" role="region" aria-label="Contact information and form">
+      <!-- Reach Us -->
+      <div class="contact-info" aria-labelledby="reach-heading">
+        <h3 id="reach-heading">Reach Us At</h3>
+        <p><strong>Address:</strong><br>IIT Patna, Bihta Campus, Bihar 801106</p>
+        <p><strong>Email:</strong><br><a href="mailto:robocon@iitp.ac.in">robocon@iitp.ac.in</a></p>
+
+        <div class="flex justify-center md:justify-start mt-4 space-x-5 text-xl">
+          <a href="https://instagram.com/teamphoenix.iitp" target="_blank" title="Instagram" class="hover:scale-110 transition-transform">
+            <img src="https://img.icons8.com/fluency/30/instagram-new.png" alt="Instagram" />
+          </a>
+          <a href="https://linkedin.com/company/teamphoenixiitp" target="_blank" title="LinkedIn" class="hover:scale-110 transition-transform">
+            <img src="https://img.icons8.com/fluency/30/linkedin.png" alt="LinkedIn" />
+          </a>
+          <a href="mailto:robocon@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
+            <img src="https://img.icons8.com/fluency/30/new-post.png" alt="Email" />
+          </a>
+        </div>
+
+       
+
+        <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3421.9098386906803!2d84.850329!3d25.537156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDMyJzEzLjgiTiA4NMKwNTEnMDEuMiJF!5e1!3m2!1sen!2sin!4v1754081578974!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Team Phoenix map"></iframe>
+      </div>
+
+      <!-- Contact Form -->
+      <section class="p-6 max-w-3xl mx-auto contact-form">
+        <h1 class="text-2xl font-bold text-orange-500 mb-4">Send Us a Message</h1>
+
+        <form id="contactForm" class="space-y-4">
+          <input type="text" id="name" placeholder="Your Name" required class="w-full p-2 rounded bg-gray-900 border border-gray-700">
+         <input type="text" id="emailOrPhone" placeholder="Your Email or Phone" required class="w-full p-2 rounded bg-gray-900 border border-gray-700">
+          <select id="subject" class="w-full p-2 rounded bg-gray-900 border border-gray-700">
+            <option>Join Us</option>
+            <option>Collaboration</option>
+            <option>Media Inquiry</option>
+            <option>Other</option>
+          </select>
+          <textarea id="message" placeholder="Your Message..." rows="6" required class="w-full p-2 rounded bg-gray-900 border border-gray-700"></textarea>
+          <button type="submit" id="sendBtn" class="w-full bg-orange-600 hover:bg-orange-700 font-bold py-2 px-4 rounded">Send Message</button>
+
+          <!-- Inline status area -->
+          <p id="formStatus" class="text-sm mt-2 text-gray-300" aria-live="polite" hidden></p>
+        </form>
+      </section>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-black text-white px-6 pt-10 pb-6 relative border-t border-orange-500 shadow-inner z-50">
+  <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-3 text-center md:text-left">
+    <div>
+      <div class="flex items-center justify-center md:justify-start mb-2">
+        <img src="image1-removebg-preview.png" alt="Phoenix Logo" class="h-10 w-10 mr-2">
+        <span class="orbitron text-lg font-bold">Team Phoenix<span class="text-orange-500">.</span></span>
+      </div>
+      <p class="text-sm text-gray-400">Official Robotics Team of IIT Patna.</p>
+    </div>
+
+    <div>
+      <h3 class="text-orange-500 font-semibold text-lg mb-2">Quick Links</h3>
+      <ul class="space-y-1 text-sm text-gray-300">
+        <li><a href="index.html" class="hover:text-orange-400"> Home</a></li>
+        <li><a href="team.html" class="hover:text-orange-400"> Team</a></li>
+        <li><a href="gallery.html" class="hover:text-orange-400"> Gallery</a></li>
+        <li><a href="resource.html" class="hover:text-orange-400"> Resources</a></li>
+        <li><a href="contact.html" class="hover:text-orange-400"> Contact</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="text-orange-500 font-semibold text-lg mb-2">Contact</h3>
+      <div class="space-y-2 text-sm text-gray-300">
+        <p class="flex items-center justify-center md:justify-start gap-2">
+          <i class="fas fa-envelope text-yellow-400 text-lg"></i>
+        </p>
+        <p class="flex items-center justify-center md:justify-start gap-2">
+          <i class="fas fa-map-marker-alt text-green-400 text-lg"></i>
+          <span>IIT Patna, India</span>
+        </p>
+      </div>
+      <div class="flex justify-center md:justify-start mt-4 space-x-5 text-xl">
+        <a href="https://instagram.com/teamphoenix.iitp" target="_blank" title="Instagram" class="hover:scale-110 transition-transform">
+          <img src="https://img.icons8.com/fluency/30/instagram-new.png" alt="Instagram" />
+        </a>
+        <a href="https://linkedin.com/company/teamphoenixiitp" target="_blank" title="LinkedIn" class="hover:scale-110 transition-transform">
+          <img src="https://img.icons8.com/fluency/30/linkedin.png" alt="LinkedIn" />
+        </a>
+        <a href="mailto:teamphoenix@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
+          <img src="https://img.icons8.com/fluency/30/new-post.png" alt="Email" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="text-center text-xs text-gray-500 mt-8 border-t border-gray-700 pt-4">
+    &copy; 2025 Team Phoenix – IIT Patna.
+  </div>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</footer>
+
+<!-- Burger menu -->
+<script>
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("menu-overlay");
+const closeMenuBtn = document.getElementById("close-menu");
+function openMenu() { menu.style.right = "0px"; overlay.classList.remove("hidden"); }
+function closeMenu() { menu.style.right = "-100%"; overlay.classList.add("hidden"); }
+burger.addEventListener("click", openMenu);
+overlay.addEventListener("click", closeMenu);
+closeMenuBtn.addEventListener("click", closeMenu);
+</script>
+
+<!-- Particles + AOS init -->
+<script>
+AOS.init({ duration: 500, once: true });
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+    "color": { "value": "#f97316" },
+    "shape": { "type": "circle" },
+    "opacity": { "value": 1 },
+    "size": { "value": 5, "random": true },
+    "line_linked": { "enable": true, "distance": 150, "color": "#f97316", "opacity": 0.6, "width": 1 },
+    "move": { "enable": true, "speed": 2 }
+  },
+  "interactivity": {
+    "events": {
+      "onhover": { "enable": true, "mode": "grab" },
+      "onclick": { "enable": true, "mode": "repulse" },
+      "resize": true
+    }
+  },
+  "retina_detect": true
+});
+</script>
+
+<!-- Firebase Integration -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
+
+// ✅ Correct config
+const firebaseConfig = {
+  apiKey: "AIzaSyClOcGJZW8KqCjT4Nhb_7oaaWKjVnGjY70",
+  authDomain: "team-phoenix-iitp.firebaseapp.com",
+  projectId: "team-phoenix-iitp",
+  storageBucket: "team-phoenix-iitp.appspot.com",
+  messagingSenderId: "108740899370",
+  appId: "1:108740899370:web:2ee116b271e207f2b2c953",
+  measurementId: "G-9J1CHFPHY1"
+};
+
+let db;
+try {
+  const app = initializeApp(firebaseConfig);
+  db = getFirestore(app);
+  const status = document.getElementById("formStatus");
+  if (status) {
+    status.hidden = false;
+    status.textContent = "✅ You can send a message.";
+  }
+} catch (initErr) {
+  const status = document.getElementById("formStatus");
+  if (status) {
+    status.hidden = false;
+    status.textContent = "❌  failed: " + initErr.message;
+  }
+  console.error("Firebase init error:", initErr);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("contactForm");
+  const btn = document.getElementById("sendBtn");
+  const status = document.getElementById("formStatus");
+
+  if (!form || !btn) {
+    console.error("Form or button not found in DOM.");
+    if (status) {
+      status.hidden = false;
+      status.textContent = "❌ Form not found on the page.";
+    }
+    return;
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
+    const name = document.getElementById("name")?.value?.trim() || "";
+    const emailOrPhone = document.getElementById("emailOrPhone")?.value?.trim() || "";
+    const subject = document.getElementById("subject")?.value || "";
+    const message = document.getElementById("message")?.value?.trim() || "";
+
+    console.log("Captured contact:", emailOrPhone); // 🔍 Debugging
+
+    try {
+      await addDoc(collection(db, "messages"), {
+        name,
+        contact: emailOrPhone, // ✅ renamed field
+        subject,
+        message,
+        createdAt: serverTimestamp()
+      });
+      if (status) {
+        status.hidden = false;
+        status.textContent = "✅ Message sent!";
+      }
+      form.reset();
+    } catch (err) {
+      console.error("🔥 Firestore error:", err);
+      if (status) {
+        status.hidden = false;
+        status.textContent = "❌ Error: " + err.message;
+      } else {
+        alert("❌ Error: " + err.message);
+      }
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Send Message";
+    }
+  });
+});
+</script>
+
+
+
+</body>
+</html>

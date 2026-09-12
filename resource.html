@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCMJ34W220"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PCMJ34W220');
+</script>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Resources & Guides
+</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;500;700&family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind (for utility classes) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Particles -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Lottie -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+      html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+    /* Page basics */
+    body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg,#000 0%,#0b0e17 50%,#000 100%);
+    color: white;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+  }
+
+  .iit-center-text, nav a, #hero-subheading, .contact-header-box p {
+    font-family: 'Poppins', sans-serif;
+  }
+
+  p, a, input, select, textarea, button {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+    /* Navbar */
+    nav {
+      background: black;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    nav .logo { display:flex; align-items:center; font-weight:700; color:#fff; }
+    nav .logo img { height:35px; width:35px; object-fit:contain; margin-right:8px; }
+    nav .iit-center-text { flex:1; text-align:center; font-family:'Poppins'; font-weight:700; }
+    nav ul { display:flex; gap:22px; list-style:none; margin:0; padding:0; }
+    nav a { color:#fff; text-decoration:none; font-weight:600; position:relative; }
+    nav a:hover::after, nav a.active::after { content:""; position:absolute; left:0; bottom:-6px; height:2px; width:100%; background:orange; }
+
+    /* Hero */
+    .black-orange-corners {
+      background:
+        radial-gradient(circle at top left, rgba(255,120,0,0.2), transparent 30%),
+        radial-gradient(circle at bottom right, rgba(255,94,0,0.18), transparent 30%),
+        #000;
+      position:absolute; inset:0; z-index:-1; background-repeat:no-repeat; background-size:cover;
+    }
+    #home { position:relative; height:80vh; display:grid; align-items:center; padding-top:64px; overflow:hidden; }
+
+    /* Contact section */
+    .contact-section { position:relative; padding:60px 20px 100px; z-index:1; background:transparent; }
+    .container { max-width:1100px; margin:0 auto; position:relative; }
+
+    /* decorative gradient bg */
+    .gradient-bg {
+      position:absolute; inset:0; width:100%; height:100%; left:-25%; top:-25%;
+      background: radial-gradient(circle at center,#ff4500 0%, #0a0a0a 70%);
+      opacity:0.12; transform:rotate(25deg); z-index:0;overflow-x: hidden;
+    }
+
+   
+    /* Lottie and map */
+    .lottie-icons { display:flex; gap:12px; margin-top:10px; }
+    .map { width:100%; height:180px; border:2px solid #222; border-radius:8px; margin-top:12px; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .columns { grid-template-columns: 1fr; }
+      #home { height:70vh; }
+      .contact-header-box { padding:18px; }
+    }
+    
+  </style>
+  
+</head>
+<body>
+
+ <!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-black flex items-center justify-between px-4 py-2">
+  <!-- Logo -->
+  <div class="flex items-center gap-2">
+    <img src="image1-removebg-preview.png" alt="logo" class="h-9 w-9 object-contain">
+    <span class="font-bold text-white">Team Phoenix<span class="text-orange-500">.</span></span>
+  </div>
+
+  <!-- IIT Patna text (hidden on small screens) -->
+  <div class="hidden md:block font-semibold text-white">IIT Patna</div>
+
+  <!-- Burger Icon -->
+  <button id="burger" class="flex flex-col justify-between w-6 h-5 md:hidden">
+    <span class="block w-full h-[3px] bg-white"></span>
+    <span class="block w-full h-[3px] bg-white"></span>
+    <span class="block w-full h-[3px] bg-white"></span>
+  </button>
+
+  <!-- Menu -->
+  <ul id="menu" class="fixed top-0 right-[-100%] h-full w-[80%] bg-black flex flex-col items-start pt-6 gap-6 pl-6 transition-all duration-300 z-50 md:static md:flex-row md:gap-6 md:w-auto md:h-auto md:pt-0 md:pl-0 md:right-0">
+    <!-- Close Button -->
+    <button id="close-menu" class="text-white text-2xl absolute top-4 right-4 hover:text-orange-400 md:hidden">&times;</button>
+    <li><a href="index.html" class="text-white font-semibold hover:text-orange-400">Home</a></li>
+    <li><a href="team.html" class="text-white font-semibold hover:text-orange-400 ">Team</a></li>
+    <li><a href="gallery.html" class="text-white font-semibold hover:text-orange-400">Gallery</a></li>
+    <li><a href="resource.html" class="text-white font-semibold hover:text-orange-400 active">Resources</a></li>
+    <li><a href="contact.html" class="text-white font-semibold hover:text-orange-400">Contact</a></li>
+        <li><a href="Conspectus_Phoenix.pdf" class="text-white font-semibold hover:text-orange-400">Collaborate</a></li>
+  </ul>
+</nav>
+
+<!-- Overlay -->
+<div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40"></div>
+ <!-- HERO -->
+<section id="home" style="position:relative; height:50vh; display:flex; align-items:center; justify-content:center; padding-top:64px; overflow:hidden;">
+  <div class="black-orange-corners"></div>
+  <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+  <div style="z-index:2; width:100%; max-width:900px; text-align:center; padding:0 20px;">
+    <h1 class="orbitron" style="font-size:4rem; color:#ff8a3d; margin-bottom:12px;">
+      Resources & Guides
+
+    </h1>
+    <p id="hero-subheading" class="poppins" style="font-size:1.2rem; color:#c7c7c7; max-width:650px; margin:0 auto;">
+    A collection of materials to power your robotics journey — from competition rulebooks to technical documentation.
+
+    </p>
+  </div>
+</section>
+
+  <!-- Resources Section -->
+  
+    <section id="contact" class="contact-section" style="position:relative; overflow:visible;">
+    <div class="gradient-bg"></div>
+
+    <div class="container">
+    <h2 class="text-3xl text-center orbitron mb-10 highlight">- Useful Resources -</h2>
+
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+
+      <!-- Resource Card 1 -->
+   <div style="
+  background: linear-gradient(145deg, rgba(18,18,18,0.95) 0%, rgba(8,8,8,0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  transition: all 0.35s ease;
+" 
+onmouseover="this.style.boxShadow='0 8px 24px rgba(255,138,61,0.4)'; this.style.transform='scale(1.05)';"
+onmouseout="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.4)'; this.style.transform='scale(1)';">
+
+        <img src="img/logo.png" alt="PDF" class="w-16 h-16 mb-4">
+        <h3 class="text-lg font-bold">Robocon Rules 2025</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">Official rulebook for Robocon 2025 competition.</p>
+        <a href="Robocon2025.pdf" class="text-orange-500 font-semibold"> Download PDF</a>
+      </div>
+
+      <!-- Resource Card 2 -->
+  <div style="
+  background: linear-gradient(145deg, rgba(18,18,18,0.95) 0%, rgba(8,8,8,0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  transition: all 0.35s ease;
+" 
+onmouseover="this.style.boxShadow='0 8px 24px rgba(255,138,61,0.4)'; this.style.transform='scale(1.05)';"
+onmouseout="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.4)'; this.style.transform='scale(1)';">
+
+        <img src="img/github.webp" alt="Link" class="w-16 h-16 mb-4">
+        <h3 class="text-lg font-bold">Team Phoenix GitHub</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">Access our open-source robotics projects.</p>
+        <a href="https://github.com/robocon-iit-patna" target="_blank" class="text-orange-500 font-semibold">Visit Repo</a>
+      </div>
+
+      <!-- Resource Card 3 -->
+     <div style="
+  background: linear-gradient(145deg, rgba(18,18,18,0.95) 0%, rgba(8,8,8,0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  transition: all 0.35s ease;
+" 
+onmouseover="this.style.boxShadow='0 8px 24px rgba(255,138,61,0.4)'; this.style.transform='scale(1.05)';"
+onmouseout="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.4)'; this.style.transform='scale(1)';">
+
+        <img src="img/robo.png" alt="Video" class="w-16 h-16 mb-4">
+        <h3 class="text-lg font-bold">Ultimate Robotics Handbook</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mb-2"></p>
+        <a href="https://panav.gitbook.io/robotics-handbook" target="_blank" class="text-orange-500 font-semibold"> View</a>
+      </div>
+
+      <!-- Resource Card 4 -->
+<div style="
+  background: linear-gradient(145deg, rgba(18,18,18,0.95) 0%, rgba(8,8,8,0.92) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  padding: 26px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+  transition: all 0.35s ease;
+" 
+onmouseover="this.style.boxShadow='0 8px 24px rgba(255,138,61,0.4)'; this.style.transform='scale(1.05)';"
+onmouseout="this.style.boxShadow='0 8px 24px rgba(0,0,0,0.4)'; this.style.transform='scale(1)';">
+
+        <img src="img/handbook.jpg" alt="Document" class="w-16 h-16 mb-4">
+        <h3 class="text-lg font-bold">Technical Documentation</h3>
+        <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">Detailed docs for robot hardware & software.</p>
+        <a href="handbook.pdf" class="text-orange-500 font-semibold">📥 Download Docs</a>
+      </div>
+</div>
+    </div>
+  </section>
+
+     <!-- 🌟 FOOTER -->
+<footer class="bg-black text-white px-6 pt-10 pb-6 relative border-t border-orange-500 shadow-inner z-50 w-full">
+<div class="grid gap-8 md:grid-cols-3 text-center md:text-left">
+
+
+    <!-- 👑 Logo + About -->
+    <div>
+      <div class="flex items-center justify-center md:justify-start mb-2">
+        <img src="image1-removebg-preview.png" alt="Phoenix Logo" class="h-10 w-10 mr-2">
+        <span class="orbitron text-lg font-bold">Team Phoenix<span class="text-orange-500">.</span></span>
+      </div>
+      <p class="text-sm text-gray-400">Official Robotics Team of IIT Patna.</p>
+    </div>
+
+    <!-- 📂 Quick Links -->
+    <div>
+      <h3 class="text-orange-500 font-semibold text-lg mb-2">Quick Links</h3>
+      <ul class="space-y-1 text-sm text-gray-300">
+        <li><a href="index.html" class="hover:text-orange-400"> Home</a></li>
+        <li><a href="team.html" class="hover:text-orange-400"> Team</a></li>
+        <li><a href="gallery.html" class="hover:text-orange-400"> Gallery</a></li>
+        <li><a href="resource.html" class="hover:text-orange-400"> Resources</a></li>
+        <li><a href="contact.html" class="hover:text-orange-400"> Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- 📬 Contact & Social -->
+   <!-- 📬 Contact & Social (Updated with Logos & Links) -->
+<div>
+  <h3 class="text-orange-500 font-semibold text-lg mb-2">Contact</h3>
+  
+  <div class="space-y-2 text-sm text-gray-300">
+    <p class="flex items-center justify-center md:justify-start gap-2">
+      <i class="fas fa-envelope text-yellow-400 text-lg"></i>
+     
+    </p>
+    
+    <p class="flex items-center justify-center md:justify-start gap-2">
+      <i class="fas fa-map-marker-alt text-green-400 text-lg"></i>
+      <span>IIT Patna, India</span>
+    </p>
+  </div>
+
+  <div class="flex justify-center md:justify-start mt-4 space-x-5 text-xl">
+    <a href="https://instagram.com/teamphoenix.iitp" target="_blank" title="Instagram" class="hover:scale-110 transition-transform">
+      <img src="https://img.icons8.com/fluency/30/instagram-new.png" alt="Instagram" />
+    </a>
+    <a href="https://linkedin.com/company/teamphoenixiitp" target="_blank" title="LinkedIn" class="hover:scale-110 transition-transform">
+      <img src="https://img.icons8.com/fluency/30/linkedin.png" alt="LinkedIn" />
+    </a>
+    <a href="mailto:teamphoenix@iitp.ac.in" title="Email" class="hover:scale-110 transition-transform">
+      <img src="https://img.icons8.com/fluency/30/new-post.png" alt="Email" />
+    </a>
+  </div>
+</div>
+
+
+  </div>
+
+  <!-- 🔚 Bottom Note -->
+  <div class="text-center text-xs text-gray-500 mt-8 border-t border-gray-700 pt-4">
+    &copy; 2025 Team Phoenix – IIT Patna.
+  </div>
+ 
+
+  <!-- FontAwesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</footer>
+
+  <!-- Scripts -->
+  <script>
+    AOS.init();
+    window.onload = () => document.getElementById("preloader").style.display = "none";
+
+    function toggleTheme() {
+      document.documentElement.classList.toggle("dark");
+      localStorage.theme = document.documentElement.classList.contains("dark") ? "dark" : "light";
+    }
+    if (localStorage.theme === 'dark') document.documentElement.classList.add("dark");
+  </script>
+  <script>
+particlesJS("particles-js", {
+  "particles": {
+    "number": { "value": 100, "density": { "enable": true, "value_area": 800 }},
+    "color": { "value": "#f97316" },
+    "shape": {
+      "type": "circle",
+      "stroke": { "width": 0, "color": "#000" },
+      "polygon": { "nb_sides": 6 }
+    },
+    "opacity": { "value": 0.8, "random": false },
+    "size": { "value": 5, "random": true },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#f97316",
+      "opacity": 0.6,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 2,
+      "direction": "none",
+      "random": false,
+      "straight": false,
+      "out_mode": "bounce",
+      "bounce": true
+    }
+  },
+  "interactivity": {
+    "detect_on": "canvas",
+    "events": {
+      "onhover": { "enable": true, "mode": "grab" },
+      "onclick": { "enable": true, "mode": "repulse" },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 200,
+        "line_linked": { "opacity": 0.5 }
+      },
+      "repulse": {
+        "distance": 100,
+        "duration": 0.4
+      }
+    }
+  },
+  "retina_detect": true
+});
+</script>
+<script>
+const burger = document.getElementById("burger");
+const menu = document.getElementById("menu");
+const overlay = document.getElementById("menu-overlay");
+const closeMenuBtn = document.getElementById("close-menu");
+
+function openMenu() {
+  menu.style.right = "0px";
+  overlay.classList.remove("hidden");
+}
+
+function closeMenu() {
+  menu.style.right = "-100%";
+  overlay.classList.add("hidden");
+}
+
+burger.addEventListener("click", openMenu);
+overlay.addEventListener("click", closeMenu);
+closeMenuBtn.addEventListener("click", closeMenu);
+</script>
+</body>
+</html>

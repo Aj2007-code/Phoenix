@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PCMJ34W220"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PCMJ34W220');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Robots - Team Phoenix</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300">
+
+  <!-- Header -->
+  <header class="text-center py-10">
+    <h1 class="text-4xl md:text-5xl font-bold text-orange-500">Our Robots</h1>
+    <p class="text-lg mt-2 text-gray-600 dark:text-gray-300">Explore our creations through the years</p>
+  </header>
+
+  <!-- 2025 Robot -->
+  <section class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 items-center gap-8" data-aos="fade-up">
+    <img src="img/logo.png" class="w-full max-w-md mx-auto md:mx-0 hover:scale-105 transition-transform duration-300" />
+
+    <div>
+      <h2 class="text-sm text-red-600 font-semibold uppercase">Robocon 2025</h2>
+      <h3 class="text-3xl font-bold mb-4">Robot Basketball - Team Effort, Ultimate Success</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-6">
+        ABU Robocon 2025,” held in Ulaanbaatar, Mongolia, introduces the Robot Basketball game under the motto “Team
+        Effort, Ultimate Success”. Teams of two robots per side (red vs. blue) compete in fast-paced matches where
+        precision, teamwork, and strategy determine the victor.
+      </p>
+      <a href="https://www.youtube.com/watch?v=FTopsDAp2-o" target="_blank"
+        class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition">▶️
+        Watch Demo</a>
+      <button onclick="toggleRobotDemo('robot-demo-2025')"
+        class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition">
+        View Our Bots
+      </button>
+      <!-- 🔍 Robot Demo Section (Initially Hidden) -->
+      <div id="robot-demo-2025" class="hidden py-16 px-6 bg-gray-100 dark:bg-gray-800 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-4">2025 Robot Demo</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
+          Dive into our detailed breakdown of the bots we designed for ABU Robocon 2025 – their roles, challenges,
+          design goals, and how they tackled the "Robot Basketball" problem statement.
+        </p>
+
+        <!-- 📽️ Video -->
+        <div class="mb-12 max-w-4xl mx-auto shadow-lg">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- 🤖 Robot 1 -->
+        <div class="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-10 text-left max-w-5xl mx-auto">
+          <h3 class="text-xl font-semibold text-red-600 mb-2">Robot 1: Shooter Bot</h3>
+          <img src="0e2f16d8-0565-401a-982a-7ce56f400efa.png" class="w-full max-w-md mb-4 rounded"
+            alt="Shooter Robot" />
+          <p>
+            In 2025, the game switched to basketball-and so did our robot design. R1 for this year was built
+            to score. Its shooting system used a dual flywheel setup that could control both the angle and speed
+            of the shot. Whether it was a 2-pointer or a 3-pointer, the robot handled it with precision.
+            To make shots accurate, we used an AI-based auto-aiming system. A camera detected the
+            hoop, and the Jetson Nano calculated the best angle for shooting. This allowed the bot to score
+            consistently from different positions. A special catcher ensured smooth ball handling during fast
+            movements. The entire bot was designed to be fast, stable, and accurate.<br>
+
+            <b>Core Tech Stack and Tools:</b><br>
+            <b>• Hardwares:</b> Jetson Nano (MLmodeltrained on ”PARAMRUDRA”), STM32(Motor+Drive
+            Control), LIDAR, Intel Realsense Camera<br>
+            <b>• Software:</b> YOLOv8, OpenCV, Python, C/C++, ROS2Humble, SLAM,STMCubeIDE, Gazebo
+            Harmonic<br>
+           <b> • Mechanics:</b> Dual-flywheel shooter, wedge-based catcher, omni wheel drive<br>
+           <b> • Design + Sim:</b> SolidWorks, Simulink, MATLAB (Ballistics modeling)<br>
+          </p>
+        </div>
+
+        <!-- 🛡️ Robot 2 -->
+        <div class="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-10 text-left max-w-5xl mx-auto">
+          <h3 class="text-xl font-semibold text-red-600 mb-2">Robot 2: Assist & Defense Bot</h3>
+          <img src="your_second_robot_image.png" class="w-full max-w-md mb-4 rounded" alt="Assist Robot" />
+          <p>
+            R2 in 2025 played a support role to R1. It stayed on the defensive end of the court, focusing on
+            blocking opponent shots and recovering missed balls. It had the same drive and body structure as
+            R1, which allowed it to move quickly and reposition with ease.
+            While R2 didn’t have the advanced aiming features, it still used the flywheel to make quick
+            passes or return shots when needed. Its main strength was in its speed, reaction time, and ability
+            to cover space defensively.<br>
+            <b>Core Tech Stack and Tools:</b><br>
+            <b> • Hardwares:</b> STM32 for fast real-time control, Raspberry Pi 5<br>
+            <b> • Software:</b> I2C communication, PID motor control using Simulink, EasyEDA , KiCAD , ROS2<br>
+            <b>• Mechanical Design:</b> Shared chassis with R1, lightweight aluminum frame<br>
+            <b>• Electronics:</b> MD10C Motor Driver, custom PCB for power and signal routing<br>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+ <!-- 2024 Robot -->
+  <section class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-2 items-center gap-8" data-aos="fade-up">
+    <img src="img/LOGO_ROBOCON2024.png" class="w-full max-w-md mx-auto md:mx-0 hover:scale-105 transition-transform duration-300" />
+
+    <div>
+      <h2 class="text-sm text-red-600 font-semibold uppercase">Robocon 2024</h2>
+      <h3 class="text-3xl font-bold mb-4">Robot Farming - Cultivating Innovation</h3>
+      <p class="text-gray-700 dark:text-gray-300 mb-6">
+        ABU Robocon 2024, hosted in Pune, India, embraced the theme "Harvest Day", inspired by Vietnamese folklore. The challenge required teams to design two coordinated robots – an automatic robot and a manual robot – that worked together to plant and harvest symbolic crops on a dynamic game field.
+
+With elements of real-time coordination, precision placement, and agricultural simulation, the contest showcased creative problem-solving and teamwork in the domain of robotic agriculture.
+      </p>
+      <a href="https://www.youtube.com/watch?v=FTopsDAp2-o" target="_blank"
+        class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition">▶️
+        Watch Demo</a>
+      <button onclick="toggleRobotDemo('robot-demo-2024')"
+        class="inline-block bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition">
+        View Our Bots
+      </button>
+      <!-- 🔍 Robot Demo Section (Initially Hidden) -->
+      <div id="robot-demo-2024" class="hidden py-16 px-6 bg-gray-100 dark:bg-gray-800 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-4">2025 Robot Demo</h2>
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-10 max-w-3xl mx-auto">
+         Dive into our detailed breakdown of the bots we designed for
+ABU Robocon 2024 - their roles, challenges, design goals,
+and how they tackled the "Harvest Day" problem statement.
+
+
+        </p>
+
+        <!-- 📽️ Video -->
+        <div class="mb-12 max-w-4xl mx-auto shadow-lg">
+          <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <!-- 🤖 Robot 1 -->
+        <div class="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-10 text-left max-w-5xl mx-auto">
+          <h3 class="text-xl font-semibold text-red-600 mb-2"> R1-Robocon 2024: Manual Farming Bot</h3>
+          <img src="0e2f16d8-0565-401a-982a-7ce56f400efa.png" class="w-full max-w-md mb-4 rounded"
+            alt="Shooter Robot" />
+          <p>
+           Our first robot from 2024 was a manually controlled farming bot designed for planting saplings
+ and transferring grains across the arena. It was operated using a custom wireless app, giving the
+ driver smooth control throughout the match.
+ Toplant saplings, the robot used two pneumatic claws that could pick up and place two saplings
+ at once. These were lifted and lowered using a belt and pulley system powered by stepper motors,
+ allowing accurate positioning every time. The gripping system was cushioned to hold saplings
+ without damaging them.
+ For grain transfer, we used a unique approach. Instead of moving grains from place to place
+ manually, the robot launched them using compressed air and a lever-like mechanism. This reduced
+ movement time and made the process fast and efficient, all while keeping the robot lightweight and
+ responsive.<br>
+
+            <b>Core Tech Stack and Tools:</b><br>
+            <b>• Hardwares:</b> ESP32 for wireless communication and drive control<br>
+            <b>• Software:</b>  Arduino IDE, Custom Android App (Java/XML)<br>
+           <b> • Mechanical Design:</b>  SolidWorks for CAD, pneumatic actuators, NEMA 17 stepper motors<br>
+           <b> • Design + simulations:</b> SolidWorks for CAD,MATLAB for motion and force analysis<br>
+          </p>
+        </div>
+
+        <!-- 🛡️ Robot 2 -->
+        <div class="bg-white dark:bg-gray-900 rounded-lg shadow p-6 mb-10 text-left max-w-5xl mx-auto">
+          <h3 class="text-xl font-semibold text-red-600 mb-2">R2–Robocon 2024: Autonomous Silo Bot</h3>
+          <img src="your_second_robot_image.png" class="w-full max-w-md mb-4 rounded" alt="Assist Robot" />
+          <p>
+            Our second bot from 2024 was fully autonomous and focused on picking grains and placing them
+ into silos. It navigated the field using mecanum wheels, which let it move in any direction without
+ turning.
+ The bot used sensors to follow lines, avoid obstacles, and detect walls. It was equipped with
+ cameras and laser sensors to locate grains and silos. Once it found a grain, a claw-lift system
+ picked it up and dropped it into the correct silo.
+ To make smart decisions, the robot used reinforcement learning. It followed a trained Q
+table that helped it decide which silo to go to next. With features like dead reckoning, perspective
+ correction, and custom PID control, the robot adapted to different match conditions without manual
+ help.<br>
+            <b>Core Tech Stack and Tools:</b><br>
+            <b> • Hardwares:</b>  Raspberry Pi 4, CubePilot Orange, Arduino Mega<br>
+            <b> • Software:</b>  Python (OpenCV, PyTorch), PX4 Autopilot, MATLAB<br>
+            <b>• Sensors:</b>  IMUs, LSA08 line sensors, Hall encoders, Pi Cameras, Reflective lasers<br>
+            <b>• Control Systems:</b>  Reinforcement Learning (Q-Learning), Adaptive PID<br>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+  <!-- Future robots can be added similarly -->
+  <section class="max-w-6xl mx-auto px-6 py-12 text-center" data-aos="fade-up">
+    <h2 class="text-2xl font-bold mb-2">More Robots Coming Soon</h2>
+    <p class="text-gray-600 dark:text-gray-400">Stay tuned for our previous and upcoming Robocon entries!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-6 text-sm bg-black text-white">
+    © 2025 Team Phoenix - IIT Patna Robocon
+  </footer>
+
+  <script>
+    AOS.init();
+  </script>
+ 
+
+
+<script>
+  function toggleRobotDemo(id) {
+    const allDemos = document.querySelectorAll("[id^='robot-demo-']");
+    allDemos.forEach(demo => {
+      if (demo.id === id) {
+        demo.classList.toggle("hidden");
+        demo.scrollIntoView({ behavior: "smooth" });
+      } else {
+        demo.classList.add("hidden"); // hide others
+      }
+    });
+  }
+</script>
+
+</body>
+
+</html>
