@@ -181,7 +181,7 @@ nav a.active::after {
 .team-card {
   width: 220px;
   height: 320px;
-  perspective: 1000px; 
+  perspective: 1000px; /* Enable 3D flip */
 }
 
 .team-inner {
@@ -212,7 +212,7 @@ nav a.active::after {
   justify-content: flex-end;
 }
 
-/* Front side  */
+/* Front side (photo + name) */
 .team-front img {
   width: 100%;
   height: 100%;
@@ -234,7 +234,7 @@ nav a.active::after {
   color: #fff;
 }
 
-/* Back side  */
+/* Back side (info + socials) */
 .team-back {
   transform: rotateY(180deg);
   padding: 16px;
@@ -248,7 +248,7 @@ nav a.active::after {
 }
 
 .team-front {
-  pointer-events: auto; 
+  pointer-events: auto; /* clickable front side if needed */
 }
 
 .team-back h3 {
@@ -325,6 +325,7 @@ nav a.active::after {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Fallback for a 2026 photo that hasn't been uploaded yet (broken img src) */
 .team-front .img-fallback-icon {
   display: none;
   position: absolute;
@@ -517,12 +518,12 @@ p { line-height: 1.7; }
     <h2 class="text-3xl text-center orbitron mb-6 highlight">- Meet Our Team -</h2>
 
     <div class="team-tabs">
-      <button type="button" id="tab-2025" class="team-tab-btn active" onclick="showTeamYear('2025')">Team 2025</button>
-      <button type="button" id="tab-2026" class="team-tab-btn" onclick="showTeamYear('2026')">Team 2026</button>
+      <button type="button" id="tab-2025" class="team-tab-btn" onclick="showTeamYear('2025')">Team 2025</button>
+      <button type="button" id="tab-2026" class="team-tab-btn active" onclick="showTeamYear('2026')">Team 2026</button>
     </div>
 
     <!--  TEAM 2025  -->
-    <div id="team-2025" class="team-year-section">
+    <div id="team-2025" class="team-year-section hidden">
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto justify-items-center">
 
 <div class="team-card">
@@ -808,12 +809,12 @@ p { line-height: 1.7; }
     <!--  END OF TEAM 2025  -->
 
     <!-- 2026 -->
-    <div id="team-2026" class="team-year-section hidden">
+    <div id="team-2026" class="team-year-section">
     <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto justify-items-center">
 
     
 
-      <!-- Vishesh -->
+      <!-- Member 1 -->
       <div class="team-card">
         <div class="team-inner">
           <div class="team-front">
@@ -831,7 +832,7 @@ p { line-height: 1.7; }
         </div>
       </div>
 
-      <!-- Emin -->
+      <!-- Member 2 -->
       <div class="team-card">
         <div class="team-inner">
           <div class="team-front">
@@ -849,7 +850,7 @@ p { line-height: 1.7; }
         </div>
       </div>
 
-      <!-- Abhishek -->
+      <!-- Member 3 -->
       <div class="team-card">
         <div class="team-inner">
           <div class="team-front">
@@ -867,7 +868,7 @@ p { line-height: 1.7; }
         </div>
       </div>
 
-      <!-- Tanmay -->
+      <!-- Member 4 -->
       <div class="team-card">
         <div class="team-inner">
           <div class="team-front">
@@ -885,7 +886,7 @@ p { line-height: 1.7; }
         </div>
       </div>
 
-      <!-- Nihit -->
+      <!-- Member 5 -->
       <div class="team-card">
         <div class="team-inner">
           <div class="team-front">
@@ -903,7 +904,7 @@ p { line-height: 1.7; }
         </div>
       </div>
 
-      <!-- Chinmay -->
+      <!-- Member 6 -->
       <div class="team-card">
         <div class="team-inner">
           <div class="team-front">
@@ -921,7 +922,7 @@ p { line-height: 1.7; }
         </div>
       </div>
 
-      <!-- Rudraneel -->
+      <!-- Member 7 -->
       <div class="team-card">
         <div class="team-inner">
           <div class="team-front">
@@ -939,19 +940,19 @@ p { line-height: 1.7; }
         </div>
       </div>
 
-      <!-- Bhavesh -->
+      <!-- Member 8 -->
       <div class="team-card">
         <div class="team-inner">
           <div class="team-front">
-            <img src="img/bhavesh.jpeg" alt="Member 8" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+            <img src="img/2026/member08.jpg" alt="Member 8" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
             <div class="img-fallback-icon"><i class="fas fa-user-astronaut"></i></div>
-            <h3>Bhavesh</h3>
+            <h3>Member 8</h3>
           </div>
           <div class="team-back">
-            <h3>Bhavesh</h3>
-            <p>Sub-Coord</p>
+            <h3>Member 8</h3>
+            <p>Role TBD</p>
             <div class="social-links">
-              <a href="https://www.linkedin.com/in/bhaveshagarwal315/" target="_blank"><i class="fab fa-linkedin"></i></a>
+              <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
           </div>
         </div>
@@ -1115,6 +1116,9 @@ p { line-height: 1.7; }
         <li><a href="contact.html" class="hover:text-orange-400"> Contact</a></li>
       </ul>
     </div>
+
+    <!-- Contact & Social -->
+   <!-- Contact & Social (Updated with Logos & Links) -->
 <div>
   <h3 class="text-orange-500 font-semibold text-lg mb-2">Contact</h3>
   
