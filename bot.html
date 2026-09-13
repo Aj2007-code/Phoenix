@@ -78,7 +78,6 @@
 
     .robot-section { position: relative; z-index: 1; }
 
-    /* Chassis card (same language as the rest of the site) */
     .chassis-card{
       position: relative;
       background:
@@ -193,7 +192,7 @@
         <button onclick="toggleRobotDemo('robot-demo-2025')" class="ember-btn outline">View Our Bots</button>
       </div>
 
-      <!-- 🔍 Robot Demo Section (Initially Hidden) -->
+      <!--  Robot Demo Section (Initially Hidden) -->
       <div id="robot-demo-2025" class="hidden py-16 px-2 md:px-6 text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-4">2025 Robot Demo</h2>
         <p class="text-lg mb-10 max-w-3xl mx-auto" style="color:var(--dim);">
@@ -201,13 +200,13 @@
           design goals, and how they tackled the "Robot Basketball" problem statement.
         </p>
 
-        <!-- 📽️ Video -->
+        <!--  Video -->
         <div class="mb-12 max-w-4xl mx-auto shadow-lg">
           <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
             frameborder="0" allowfullscreen></iframe>
         </div>
 
-        <!-- 🤖 Robot 1 -->
+        <!--  Robot 1 -->
         <div class="chassis-card p-6 mb-10 text-left max-w-5xl mx-auto">
           <h3 class="text-xl font-semibold text-orange-500 mb-2">Robot 1: Shooter Bot</h3>
           <div class="robot-photo-frame w-full max-w-md mb-4">
@@ -234,7 +233,7 @@
           </p>
         </div>
 
-        <!-- 🛡️ Robot 2 -->
+        <!--  Robot 2 -->
         <div class="chassis-card p-6 mb-10 text-left max-w-5xl mx-auto">
           <h3 class="text-xl font-semibold text-orange-500 mb-2">Robot 2: Assist & Defense Bot</h3>
           <div class="robot-photo-frame w-full max-w-md mb-4">
@@ -279,7 +278,7 @@ With elements of real-time coordination, precision placement, and agricultural s
         <button onclick="toggleRobotDemo('robot-demo-2024')" class="ember-btn outline">View Our Bots</button>
       </div>
 
-      <!-- 🔍 Robot Demo Section (Initially Hidden) -->
+      <!--  Robot Demo Section (Initially Hidden) -->
       <div id="robot-demo-2024" class="hidden py-16 px-2 md:px-6 text-center">
         <h2 class="text-3xl md:text-4xl font-bold text-orange-500 mb-4">2025 Robot Demo</h2>
         <p class="text-lg mb-10 max-w-3xl mx-auto" style="color:var(--dim);">
@@ -290,13 +289,13 @@ and how they tackled the "Harvest Day" problem statement.
 
         </p>
 
-        <!-- 📽️ Video -->
+        <!-- Video -->
         <div class="mb-12 max-w-4xl mx-auto shadow-lg">
           <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
             frameborder="0" allowfullscreen></iframe>
         </div>
 
-        <!-- 🤖 Robot 1 -->
+        <!-- Robot 1 -->
         <div class="chassis-card p-6 mb-10 text-left max-w-5xl mx-auto">
           <h3 class="text-xl font-semibold text-orange-500 mb-2"> R1-Robocon 2024: Manual Farming Bot</h3>
           <div class="robot-photo-frame w-full max-w-md mb-4">
@@ -325,7 +324,7 @@ and how they tackled the "Harvest Day" problem statement.
           </p>
         </div>
 
-        <!-- 🛡️ Robot 2 -->
+        <!-- Robot 2 -->
         <div class="chassis-card p-6 mb-10 text-left max-w-5xl mx-auto">
           <h3 class="text-xl font-semibold text-orange-500 mb-2">R2–Robocon 2024: Autonomous Silo Bot</h3>
           <div class="robot-photo-frame w-full max-w-md mb-4">
@@ -363,7 +362,7 @@ table that helped it decide which silo to go to next. With features like dead re
     <p style="color:var(--dim);">Stay tuned for our previous and upcoming Robocon entries!</p>
   </section>
 
-  <!-- 🌟 FOOTER -->
+  <!-- FOOTER -->
   <footer class="bg-black text-white px-6 pt-10 pb-6 relative border-t border-orange-500 shadow-inner z-50">
     <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-3 text-center md:text-left">
 
@@ -444,7 +443,7 @@ table that helped it decide which silo to go to next. With features like dead re
           demo.classList.toggle("hidden");
           demo.scrollIntoView({ behavior: "smooth" });
         } else {
-          demo.classList.add("hidden"); // hide others
+          demo.classList.add("hidden"); 
         }
       });
     }

@@ -385,7 +385,6 @@ p { line-height: 1.7; }
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </footer>
 
-<!-- Burger menu -->
 <script>
 const burger = document.getElementById("burger");
 const menu = document.getElementById("menu");
@@ -398,7 +397,6 @@ overlay.addEventListener("click", closeMenu);
 closeMenuBtn.addEventListener("click", closeMenu);
 </script>
 
-<!-- Particles + AOS init -->
 <script>
 AOS.init({ duration: 500, once: true });
 particlesJS("particles-js", {
@@ -422,12 +420,10 @@ particlesJS("particles-js", {
 });
 </script>
 
-<!-- Firebase Integration -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-app.js";
 import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore.js";
 
-// ✅ Correct config
 const firebaseConfig = {
   apiKey: "AIzaSyClOcGJZW8KqCjT4Nhb_7oaaWKjVnGjY70",
   authDomain: "team-phoenix-iitp.firebaseapp.com",
@@ -480,12 +476,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const subject = document.getElementById("subject")?.value || "";
     const message = document.getElementById("message")?.value?.trim() || "";
 
-    console.log("Captured contact:", emailOrPhone); // 🔍 Debugging
+    console.log("Captured contact:", emailOrPhone); 
 
     try {
       await addDoc(collection(db, "messages"), {
         name,
-        contact: emailOrPhone, // ✅ renamed field
+        contact: emailOrPhone, 
         subject,
         message,
         createdAt: serverTimestamp()
@@ -510,8 +506,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 </script>
-
-
-
 </body>
 </html>
